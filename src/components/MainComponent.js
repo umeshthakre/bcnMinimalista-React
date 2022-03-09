@@ -9,6 +9,15 @@ import Collab from "./CollabComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
+import {
+  Navbar,
+  NavbarBrand,
+  Jumbotron,
+  Nav,
+  NavbarToggler,
+  Collapse,
+  NavItem,
+} from "reactstrap";
 
 const Main = () => {
   return (

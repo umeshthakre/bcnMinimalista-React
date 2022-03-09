@@ -9,62 +9,83 @@ import {
   NavItem,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import 'bootstrap/dist/css/bootstrap.css';
 
-const Header = () => {
-  const toggleNav = () => {
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    //binds the function to component, when togglenav is called the this keyword will refer corectly to component
+    this.toggleNav = this.toggleNav.bind(this);
+    this.state = {
+      isNavOpen: false,
+    };
+  }
+
+  toggleNav() {
     this.setState({
       isNavOpen: !this.state.isNavOpen,
     });
-  };
+  }
 
-  return (
+  render() {
+    return (
       <React.Fragment>
         <Jumbotron fluid>
           <div className="container">
             <div className="row">
-              <div className="col">barcelona minimalista</div>
+              <div className="col">
+                <h1>barcelona minimalista</h1>
+              </div>
             </div>
           </div>
         </Jumbotron>
-        <Navbar expand="md">
-          <NavbarToggler/>
-          <Collapse >
-              <Nav navbar>
-                <NavItem>
+        <Navbar dark expand="lg" sticky="top">
+          <div className="container">
+            {/* <NavbarBrand className="mr-auto" href="/">
+            <img height="30" width="30" />
+          </NavbarBrand> */}
+            <NavbarToggler onClick={this.toggleNav} />
+            <Collapse isOpen={this.state.isNavOpen} navbar>
+              <Nav className="navbar" navbar>
+                <NavItem className="navitem">
                   <NavLink className="nav-link" to="/inform">
-                     Inform
+                    <i className="fa fa-home fa-lg" /> Inform
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/connect">
-                     Connect
+                    Connect
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/reduce">
-                     Reduce
+                    Reduce
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/tech">
-                     Tech and Tools
+                    Tech and Tools
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/rescue">
-                     Rescue
+                    Rescue
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/collab">
-                     Collab
+                    Collab
                   </NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
+          </div>
         </Navbar>
       </React.Fragment>
-  );
-};
+    );
+  }
+}
 
 export default Header;
+
