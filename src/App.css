@@ -13,5 +13,9 @@
   }
 
 .navbar-dark {
-  background-color: #901CAD;
+  background-color: green
 }
+
+ a {
+   color: black;
+ }

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import Home from "./HomeComponent";
-import Inform from "./InformComponent";
-import Connect from "./ConnectComponent";
-import Reduce from "./ReduceComponent";
-import Tech from "./TechComponent";
-import Rescue from "./RescueComponent";
-import Collab from "./CollabComponent";
-import Header from "./HeaderComponent";
-import Footer from "./FooterComponent";
+import Inform from "./content/InformComponent";
+import Connect from "./content/ConnectComponent";
+import Reduce from "./content/ReduceComponent";
+import Tech from "./content/TechComponent";
+import Rescue from "./content/RescueComponent";
+import Collab from "./content/CollabComponent";
+// import Header from "./ui/HeaderComponent";
+import Footer from "./ui/FooterComponent";
+import TitleMain from "./TitleMain";
+import Title from "./content/TitleComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
 import {
   Navbar,
@@ -18,13 +19,16 @@ import {
   Collapse,
   NavItem,
 } from "reactstrap";
+import Jumbo from "./ui/JumbotronComponent";
+import NavComp from "./ui/NavBarComponent";
 
 const Main = () => {
   return (
     <div>
-      <Header />
+      <Jumbo/>
+      <NavComp/>
       <Switch>
-        <Route path="/home" component={Home} />
+      <Route path="/titlemain" component={TitleMain} />
         <Route path="/inform" component={Inform} />
         <Route path="/connect" component={Connect} />
         <Route path="/reduce" component={Reduce} />

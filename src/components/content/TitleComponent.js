@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-const Home = () => {
+const Title = () => {
   return (
     <div>
-      <p>Example Home text</p>
+      <p>Example Title text</p>
     </div>
   );
 };
 
-export default Home;
+export default Title;
