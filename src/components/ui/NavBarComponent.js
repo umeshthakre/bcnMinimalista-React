@@ -29,7 +29,7 @@ class NavComp extends Component {
   }
   render() {
     return (
-      <Navbar dark expand="lg" sticky="top">
+      <Navbar dark expand="md" sticky="top">
         <div className="container">
           {/* <NavbarBrand className="mr-auto" href="/">
             <img height="30" width="30" />
