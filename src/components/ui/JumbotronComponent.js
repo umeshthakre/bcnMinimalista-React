@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  Jumbotron,
-  Nav,
-  NavbarToggler,
-  Collapse,
-  NavItem,
-} from "reactstrap";
+import { Jumbotron } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-// import 'bootstrap/dist/css/bootstrap.css';
+import "../styles/JumbotronComponent.css";
 
 class Jumbo extends Component {
   constructor(props) {
@@ -29,9 +20,9 @@ class Jumbo extends Component {
   }
   render() {
     return (
-      <Jumbotron fluid>
+      <Jumbotron fluid className="jumbotron-fluid">
         <NavLink to="/titlemain">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col">
                 <h1>barcelona minimalista</h1>

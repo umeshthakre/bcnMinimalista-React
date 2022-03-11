@@ -1,11 +1,18 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import "../styles/ReduceComponent.css";
+
 
 const Reduce = () => {
   return (
-    <div>
-      <p>Example Reduce text</p>
-    </div>
+    <React.Fragment>
+      <Container>
+        <Row>
+          <Col> <p className="page-title">minimize carbon output and waste</p>
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 };
 

@@ -1,11 +1,17 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import "../styles/TechComponent.css";
 
 const Tech = () => {
   return (
-    <div>
-      <p>Example Tech text</p>
-    </div>
+    <React.Fragment>
+      <Container>
+        <Row>
+          <Col> <p className="page-title">tech and tools</p>
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 };
 

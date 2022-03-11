@@ -1,11 +1,17 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import "../styles/CollabComponent.css";
 
 const Collab = () => {
   return (
-    <div>
-      <p>Example Collab text</p>
-    </div>
+    <React.Fragment>
+      <Container>
+        <Row>
+          <Col> <p className="page-title">share your ideas</p>
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 };
 

@@ -1,21 +1,15 @@
-.navbar {
-    border: 1px solid black;
-  }
-  
-  .navitem {
-    border: 1px solid red;
-    color: black;
-  }
-  
-  .nav-link {
-    border: 1px solid green;
-  
-  }
-
-.navbar-dark {
-  background-color: green
+a {
+    color:inherit;
 }
 
- a {
-   color: black;
- }
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+.page-title {
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    font-size: 200%;
+}

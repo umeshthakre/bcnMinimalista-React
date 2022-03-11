@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {
   Navbar,
-  NavbarBrand,
-  Jumbotron,
   Nav,
   NavbarToggler,
   Collapse,
@@ -10,7 +8,8 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import 'bootstrap/dist/css/bootstrap.css';
+import "../styles/NavBarComponent.css";
+
 
 class NavComp extends Component {
   constructor(props) {
@@ -29,42 +28,42 @@ class NavComp extends Component {
   }
   render() {
     return (
-      <Navbar dark expand="md" sticky="top">
+      <Navbar expand="sm" sticky="top">
         <div className="container">
           {/* <NavbarBrand className="mr-auto" href="/">
             <img height="30" width="30" />
           </NavbarBrand> */}
-          <NavbarToggler onClick={this.toggleNav} />
+          <NavbarToggler onClick={this.toggleNav} className="me-2 fa fa-bars"/>
           <Collapse isOpen={this.state.isNavOpen} navbar>
             <Nav className="navbar" navbar>
               <NavItem className="navitem">
                 <NavLink className="nav-link" to="/inform">
-                  <i className="fa fa-home fa-lg" /> Inform
+                  inform
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/connect">
-                  Connect
+                  connect
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/reduce">
-                  Reduce
+                  reduce
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/tech">
-                  Tech and Tools
+                  tech & tools
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/rescue">
-                  Rescue
+                  rescue
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/collab">
-                  Collab
+                  collab
                 </NavLink>
               </NavItem>
             </Nav>
