@@ -1,0 +1,25 @@
+#myForm__tech {
+    width: 85%;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.col .form-header {
+    margin: 0;
+    padding: 0;
+}
+
+#myForm .form-group {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.button-group {
+    margin-top: 5px;
+    text-align: right;
+    align-content: right;
+}
