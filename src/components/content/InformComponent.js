@@ -4,18 +4,42 @@ import {
   Row,
   Col,
   Button,
-  Card,
   CardImg,
   CardBody,
-  CardText,
   CardTitle,
-  CardSubtitle,
+  CardText,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/InformComponent.css";
-import Bag from "../../img/bag.jpg";
 
-const Inform = (props) => {
+function RenderInformList({ snippet }) {
+  return (
+    <Row>
+      <a href={snippet.link}>
+        <Col xs="3">
+          <CardImg alt="Card image cap" src={snippet.img} left width="10%" />
+        </Col>
+        <Col xs="9">
+          <CardBody>
+            <CardTitle tag="h5">{snippet.title}</CardTitle>
+            <CardText>{snippet.caption}</CardText>
+          </CardBody>
+        </Col>
+      </a>
+    </Row>
+  );
+}
+
+function Inform(props) {
+
+  const fullInform = props.informList.map((inform) => {
+    return (
+      <div key={inform.id} className="col-md-5 m-1">
+        <RenderInformList snippet={inform} />
+      </div>
+    );
+  });
+
   return (
     <React.Fragment>
       <Container>
@@ -34,67 +58,10 @@ const Inform = (props) => {
             </Button>
           </Col>
         </Row>
-        <Row>
-          <Col xs="3">
-            <CardImg alt="Card image cap" src={Bag} left width="10%" />
-          </Col>
-          <Col xs="9">
-            <CardBody>
-              <CardTitle tag="h5">Card title</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Card subtitle
-              </CardSubtitle>
-              <CardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="3">
-            <CardImg alt="Card image cap" src={Bag} left width="10%" />
-          </Col>
-          <Col xs="9">
-            <CardBody>
-              <CardTitle tag="h5">Card title</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Card subtitle
-              </CardSubtitle>
-              <CardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="3">
-            <CardImg alt="Card image cap" src={Bag} left width="10%" />
-          </Col>
-          <Col xs="9">
-            <CardBody>
-              <CardTitle tag="h5">Card title</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Card subtitle
-              </CardSubtitle>
-              <CardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </CardText>
-              <Button>Button</Button>
-            </CardBody>
-          </Col>
-        </Row>
+        <Row>{fullInform}</Row>
       </Container>
     </React.Fragment>
   );
-};
+}
 
 export default Inform;
-
