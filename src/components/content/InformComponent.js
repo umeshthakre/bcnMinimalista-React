@@ -15,7 +15,7 @@ import "../styles/InformComponent.css";
 function RenderInformList({ snippet }) {
   return (
     <Row>
-      <a href={snippet.link}>
+      <a href={snippet.src}>
         <Col xs="3">
           <CardImg alt="Card image cap" src={snippet.img} left width="10%" />
         </Col>
