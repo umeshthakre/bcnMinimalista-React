@@ -21,6 +21,15 @@ const Tech = () => {
           </Col>
         </Row>
         <Row>
+          <Col>
+            Megacorporations must be held accountable for their contribution to
+            global warming through policy and taxation, don’t lose sight of
+            that! However, on an individual basis, it’s helpful to check in on
+            your part too. Check in below with your water footprint, measured in
+            gallons of water.
+          </Col>
+        </Row>
+        <Row>
           <Form id="myForm__tech" fluid>
             <FormGroup fluid>
               <Input
@@ -53,6 +62,9 @@ const Tech = () => {
               </div>
             </FormGroup>
           </Form>
+        </Row>
+        <Row>
+          <Col>Additional tools go here </Col>
         </Row>
       </Container>
     </React.Fragment>

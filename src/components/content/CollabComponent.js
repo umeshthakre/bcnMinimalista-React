@@ -56,6 +56,7 @@ const Collab = () => {
               </div>
             </Col>
           </Row>
+          <Row>A list of collaborators goes here </Row>
         </Form>
       </Container>
     </React.Fragment>

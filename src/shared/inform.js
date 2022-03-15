@@ -1,7 +1,7 @@
 export const INFORM = [
   {
     id: 0,
-    img: "../img/green.jpg",
+    img: "/assets/images/green.jpg",
     title: "Barcelonas Green Initiative",
     caption: "Barcelona green infrastructure and biodiversity plan 2020",
     alt: "Barcelonas Green Initiative",
@@ -9,7 +9,7 @@ export const INFORM = [
   },
   {
     id: 1,
-    img: "../img/superilla.jpg",
+    img: "/assets/images/superilla.jpg",
     title: "Superillas",
     caption:
       "The Superblock programme is transformating the model for the entire city, with the aim of reclaiming for citizens part of the space currently occupied by private vehicles.",
@@ -18,7 +18,7 @@ export const INFORM = [
   },
   {
     id: 2,
-    img: "../img/recycle.jpg",
+    img: "/assets/images/ecycle.jpg",
     title: "A Recyclers User guide",
     caption:
       "Best recycling practices and in depth coverage of how Barcelona recycles its waste",

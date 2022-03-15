@@ -13,6 +13,14 @@ const Rescue = () => {
           </Col>
         </Row>
         <Row>
+          <Col>
+            <h4>
+              Reduce your carbon pawprint by sharing your love and resources
+              with animals in need
+            </h4>
+          </Col>
+        </Row>
+        <Row>
           <div className="card-container-rescue">
             <div className="card-rescue">
               <a

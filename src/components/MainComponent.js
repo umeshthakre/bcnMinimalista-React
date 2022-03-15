@@ -8,6 +8,7 @@ import { REDUCEPRODUCTS } from "../shared/reduceproducts.js"
 import { REDUCEWASTE } from "../shared/reducewaste.js"
 import { REDUCETIPS } from "../shared/reducetips.js"
 import Tech from "./content/TechComponent";
+import { TOOLS } from "../shared/tools";
 import Rescue from "./content/RescueComponent";
 import Collab from "./content/CollabComponent";
 import { COLLAB } from "../shared/collab"
@@ -24,6 +25,7 @@ class Main extends Component {
         products: REDUCEPRODUCTS,
         waste: REDUCEWASTE,
         tips: REDUCETIPS,
+        tools: TOOLS,
         collab: COLLAB
       }
     }
@@ -38,7 +40,7 @@ class Main extends Component {
           <Route path="/inform" component={Inform} render={()=><Inform informList={this.state.inform}/>}/>
           <Route path="/connect" component={Connect} />
           <Route path="/reduce" component={Reduce} render={()=><Reduce products={this.state.products} waste={this.state.waste} tips={this.state.tips}/>}/>
-          <Route path="/tech" component={Tech} />
+          <Route path="/tech" component={Tech} render={()=><Tech tools={this.state.tools}/>}/>
           <Route path="/rescue" component={Rescue} />
           <Route path="/collab" component={Collab} render={()=><Collab collab={this.state.collab}/>}/>
         </Switch>

@@ -61,7 +61,7 @@ function Inform(props) {
             </Button>
           </Col>
         </Row>
-        {fullInform}
+        <Row>{fullInform} News articles go here </Row>
       </Container>
     </React.Fragment>
   );
