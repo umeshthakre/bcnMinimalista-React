@@ -31,14 +31,16 @@ function RenderInformList({ snippet }) {
 }
 
 function Inform(props) {
-
-  const fullInform = props.informList.map((inform) => {
-    return (
-      <div key={inform.id} className="col-md-5 m-1">
-        <RenderInformList snippet={inform} />
-      </div>
-    );
-  });
+  let fullInform;
+  if(props.informList) {
+    fullInform = props.informList.map((inform) => {
+      return (
+          <div key={inform.id} className="col-md-5 m-1">
+            <RenderInformList snippet={inform}/>
+          </div>
+      );
+    });
+  }
 
   return (
     <React.Fragment>
