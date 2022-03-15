@@ -17,7 +17,7 @@ function RenderInformList({ snippet }) {
     <Row>
       <a href={snippet.src}>
         <Col xs="3">
-          <CardImg alt="Card image cap" src={snippet.img} left width="10%" />
+          <CardImg alt={snippet.alt} src={snippet.img} left width="10%" />
         </Col>
         <Col xs="9">
           <CardBody>
@@ -60,7 +60,7 @@ function Inform(props) {
             </Button>
           </Col>
         </Row>
-        <Row>{fullInform}</Row>
+        {fullInform}
       </Container>
     </React.Fragment>
   );

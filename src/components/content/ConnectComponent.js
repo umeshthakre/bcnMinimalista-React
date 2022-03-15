@@ -1,9 +1,6 @@
 import React from "react";
 import {
-  CardText,
   Button,
-  Card,
-  CardTitle,
   NavLink,
   NavItem,
   Nav,
