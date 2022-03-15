@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/InformComponent.css";
 
 function RenderInformList({ snippet }) {
+  console.log(snippet)
   return (
     <Row>
       <a href={snippet.src}>
