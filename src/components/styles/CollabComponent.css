@@ -1,117 +1,48 @@
-input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
-    font-size: 0.75em;
-    color: #999;
-    top: -5px;
-    -webkit-transition: all 0.225s ease;
-    transition: all 0.225s ease;
-}
-
-.styled-input {
-    float: left;
-    width: 293px;
-    margin: 1rem 0;
-    position: relative;
-    border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px){
-    .styled-input {
-        width:100%;
-    }
-}
-
-.styled-input label {
-    color: black;
-    padding: .8rem 10px .8rem 10px;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    pointer-events: none;
-}
-
-.styled-input.wide { 
-    width: 650px;
-    max-width: 100%;
+.styled-input.wide {
+  width: 650px;
+  max-width: 100%;
 }
 
 input,
 textarea {
-    padding: 25px;
-    border: 2px black solid;
-    width: 100%;
-    font-size: 1rem;
-    background-color: white;
-    color: black;
-    border-radius: 4px;
-    
-}
-
-input:focus,
-textarea:focus { outline: 0; }
-
-input:focus ~ span,
-textarea:focus ~ span {
-    width: 100%;
-    -webkit-transition: all 0.075s ease;
-    transition: all 0.075s ease;
+  padding: 25px;
+  border: 2px black solid;
+  width: 100%;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
 }
 
 textarea {
-    width: 100%;
-    min-height: 5em;
+  width: 100%;
+  min-height: 5em;
 }
 
 .input-container {
-    width: 650px;
-    max-width: 100%;
-    margin: 20px auto 25px auto;
+  width: 650px;
+  max-width: 100%;
+  margin: 20px auto 25px auto;
 }
-
 
 .btn-success {
-    float: right;
-    padding: 7px 35px;
-
-    display: inline-block;
-
-    color: white;
-    font-size: 18px;
-}
-
-.submit-btn:hover {
-    transform: translateY(1px);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
-              0 1px 1px 0 rgba(0,0,0,0.09);
+  float: right;
+  padding: 7px 35px;
+  display: inline-block;
+  color: white;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
-    .submit-btn {
-        width:100%;
-        float: none;
-        text-align:center;
-    }
-}
-
-input[type=checkbox] + label {
-  color: #ccc;
-  font-style: italic;
-} 
-
-input[type=checkbox]:checked + label {
-  color: #f00;
-  font-style: normal;
+  .submit-btn {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
 }
 
 .form-header {
-    width:100%;
-    text-align: center;
-    margin-top: 0px;
-
-}
-
-.form-subcaption {
-    width:100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
 }
