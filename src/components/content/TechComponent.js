@@ -3,13 +3,10 @@ import {
   Container,
   Row,
   Col,
-  Form,
-  FormGroup,
-  Input,
-  Button,
   CardBody,
   CardText,
 } from "reactstrap";
+import TechForm from "./TechFormComponent";
 import "../styles/TechComponent.css";
 
 function RenderTechList({ techList }) {
@@ -56,38 +53,7 @@ const Tech = (props) => {
           </Col>
         </Row>
         <Row>
-          <Form id="myForm__tech" fluid>
-            <FormGroup fluid>
-              <Input
-                id="kilometers"
-                name="kilometers"
-                type="number"
-                placeholder="Kilometers driven per week"
-              />
-              <Input
-                id="fastfashion"
-                name="fastfashion"
-                type="number"
-                placeholder="Fast fashion items purchased per year"
-              />
-              <Input
-                id="fly"
-                name="fly"
-                type="number"
-                placeholder="Flight hours over a year"
-              />
-              <Input
-                id="x"
-                name="kilometers"
-                type="number"
-                placeholder="Kilometers driven per week"
-              />
-              <div className="button-group">
-                <Button>Check Footprint</Button>
-                <Button>Clear</Button>
-              </div>
-            </FormGroup>
-          </Form>
+          <TechForm />
         </Row>
         <Row>
           <Col>{techTools} </Col>

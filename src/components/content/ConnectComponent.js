@@ -1,18 +1,21 @@
-import React from "react";
-import {
-  Button,
-  NavLink,
-  NavItem,
-  Nav,
-  TabContent,
-  TabPane,
-  Form,
-  FormGroup,
-  Input,
-} from "reactstrap";
+import React, { useState } from "react";
+import AddComment from "./ConnectAddComment";
+import CommentList from "./CommentList";
+
 import { Container, Row, Col } from "reactstrap";
 
 const Connect = () => {
+
+  const [commentsList, setCommentsList] = useState([]);
+
+  const addCommentHandler = (uEmail, uComment) => {
+    setCommentsList((prevCommentsList) => {
+      return [
+        ...prevCommentsList,
+        { name: uEmail, age: uComment, id: Math.random().toString() },
+      ];
+    });
+  };
   return (
     <React.Fragment>
       <Container>
@@ -22,38 +25,45 @@ const Connect = () => {
             <p className="page-title">chat with your community</p>
           </Col>
         </Row>
+        <AddComment onAddComment={addCommentHandler} />
+        <CommentList comments={commentsList}/>
+      </Container>
+    </React.Fragment>
+  );
+};
 
-        <div>
+export default Connect;
+
+
+  /* <div>
           <Nav tabs>
             <NavItem>
-              <NavLink className="active" onClick={function noRefCheck() {}}>
-                Chat
-              </NavLink>
+              <NavLink>Chat</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="" onClick={function noRefCheck() {}}>
-                Trade
-              </NavLink>
+              <NavLink>Trade</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="" onClick={function noRefCheck() {}}>
-                Other
-              </NavLink>
+              <NavLink>Other</NavLink>
             </NavItem>
           </Nav>
           <TabContent activeTab="1">
             <TabPane tabId="1">
               <Row>
                 <Col sm="12">
-                  <Form id="myForm__connect">
+                  <Form id="myForm__chat">
                     <FormGroup>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
+                        id="exampleText"
+                        type="textarea"
+                        placeholder="Enter Comment Here"
+                      />
+                      <Input
+                        id="userEmail"
+                        name="userEmail"
+                        placeholder="Enter your email if you wish to receive response, this will not be displayed publicly"
                         type="email"
                       />
-                      <Input id="exampleText" name="text" type="textarea" />
                       <Button>Post</Button>
                     </FormGroup>
                   </Form>
@@ -63,22 +73,47 @@ const Connect = () => {
             <TabPane tabId="2">
               <Row>
                 <Col sm="12">
-                  <h4>Tab 2 Contents</h4>
+                  <Form id="myForm__trade">
+                    <FormGroup>
+                      <Input
+                        id="exampleText"
+                        type="textarea"
+                        placeholder="Enter Comment Here"
+                      />
+                      <Input
+                        id="userEmail"
+                        name="userEmail"
+                        placeholder="Enter your email if you wish to receive response, this will not be displayed publicly"
+                        type="email"
+                      />
+                      <Button>Post</Button>
+                    </FormGroup>
+                  </Form>
                 </Col>
               </Row>
             </TabPane>
             <TabPane tabId="2">
               <Row>
                 <Col sm="12">
-                  <h4>Tab 3 Contents</h4>
+                  <Form id="myForm__other">
+                    <FormGroup>
+                      <Input
+                        id="exampleText"
+                        type="textarea"
+                        placeholder="Enter Comment Here"
+                      />
+                      <Input
+                        id="userEmail"
+                        name="userEmail"
+                        placeholder="Enter your email if you wish to receive response, this will not be displayed publicly"
+                        type="email"
+                      />
+                      <Button>Post</Button>
+                    </FormGroup>
+                  </Form>
                 </Col>
               </Row>
             </TabPane>
           </TabContent>
-        </div>
-      </Container>
-    </React.Fragment>
-  );
-};
+        </div> */
 
-export default Connect;
