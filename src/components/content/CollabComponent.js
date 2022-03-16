@@ -1,9 +1,33 @@
 import React from "react";
-import { Container, Row, Col, Form, Label } from "reactstrap";
+import { Container, Row, Col, Form, Label, CardBody, CardText } from "reactstrap";
 // import { Control } from "react-redux-form";
 import "../styles/CollabComponent.css";
 
-const Collab = () => {
+function RenderCollabList({ collabList }) {
+  return (
+    <Row>
+      <a href={collabList.src} target="_blank" rel="noreferrer">
+        <Col xs="9">
+          <CardBody>
+            <CardText>{collabList.name}</CardText>
+          </CardBody>
+        </Col>
+      </a>
+    </Row>
+  );
+}
+
+const Collab = (props) => {
+  let fullCollab;
+  if(props.collab) {
+    fullCollab = props.collab.map((collab) => {
+      return (
+          <div key={collab.id} className="col-md-5 m-1">
+            <RenderCollabList collabList={collab}/>
+          </div>
+      );
+    });
+  }
   return (
     <React.Fragment>
       <Container>
@@ -56,7 +80,7 @@ const Collab = () => {
               </div>
             </Col>
           </Row>
-          <Row>A list of collaborators goes here </Row>
+          <Row>{fullCollab} </Row>
         </Form>
       </Container>
     </React.Fragment>

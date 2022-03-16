@@ -7,10 +7,36 @@ import {
   FormGroup,
   Input,
   Button,
+  CardBody,
+  CardText,
 } from "reactstrap";
 import "../styles/TechComponent.css";
 
-const Tech = () => {
+function RenderTechList({ techList }) {
+  return (
+    <Row>
+      <a href={techList.src} target="_blank" rel="noreferrer">
+        <Col xs="9">
+          <CardBody>
+            <CardText>{techList.name}</CardText>
+          </CardBody>
+        </Col>
+      </a>
+    </Row>
+  );
+}
+
+const Tech = (props) => {
+  let techTools;
+  if (props.tools) {
+    techTools = props.tools.map((tools) => {
+      return (
+        <div key={tools.id} className="col-md-5 m-1">
+          <RenderTechList techList={tools} />
+        </div>
+      );
+    });
+  }
   return (
     <React.Fragment>
       <Container>
@@ -64,7 +90,7 @@ const Tech = () => {
           </Form>
         </Row>
         <Row>
-          <Col>Additional tools go here </Col>
+          <Col>{techTools} </Col>
         </Row>
       </Container>
     </React.Fragment>

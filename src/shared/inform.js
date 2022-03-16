@@ -18,7 +18,7 @@ export const INFORM = [
   },
   {
     id: 2,
-    img: "/assets/images/ecycle.jpg",
+    img: "/assets/images/recycle.jpg",
     title: "A Recyclers User guide",
     caption:
       "Best recycling practices and in depth coverage of how Barcelona recycles its waste",

@@ -16,7 +16,7 @@ function RenderInformList({ snippet }) {
   console.log(snippet)
   return (
     <Row>
-      <a href={snippet.src}>
+      <a href={snippet.src} target="_blank" rel="noreferrer">
         <Col xs="3">
           <CardImg alt={snippet.alt} src={snippet.img} left width="10%" />
         </Col>

@@ -37,12 +37,12 @@ class Main extends Component {
         <NavComp />
         <Switch>
           <Route path="/titlemain" component={Title} />
-          <Route path="/inform" component={Inform} render={()=><Inform informList={this.state.inform}/>}/>
+          <Route path="/inform" render={()=><Inform informList={this.state.inform}/>}/>
           <Route path="/connect" component={Connect} />
-          <Route path="/reduce" component={Reduce} render={()=><Reduce products={this.state.products} waste={this.state.waste} tips={this.state.tips}/>}/>
-          <Route path="/tech" component={Tech} render={()=><Tech tools={this.state.tools}/>}/>
+          <Route path="/reduce"  render={()=><Reduce products={this.state.products} waste={this.state.waste} tips={this.state.tips}/>}/>
+          <Route path="/tech" render={()=><Tech tools={this.state.tools}/>}/>
           <Route path="/rescue" component={Rescue} />
-          <Route path="/collab" component={Collab} render={()=><Collab collab={this.state.collab}/>}/>
+          <Route path="/collab" render={()=><Collab collab={this.state.collab}/>}/>
         </Switch>
         <Footer />
       </div>
