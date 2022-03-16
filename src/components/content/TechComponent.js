@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  CardBody,
-  CardText,
-} from "reactstrap";
+import { Container, Row, Col, CardBody, CardText } from "reactstrap";
 import TechForm from "./TechFormComponent";
 import "../styles/TechComponent.css";
 
@@ -22,7 +16,6 @@ function RenderTechList({ techList }) {
     </Row>
   );
 }
-
 const Tech = (props) => {
   let techTools;
   if (props.tools) {
@@ -52,9 +45,7 @@ const Tech = (props) => {
             gallons of water.
           </Col>
         </Row>
-        <Row>
-          <TechForm />
-        </Row>
+        <TechForm />
         <Row>
           <Col>{techTools} </Col>
         </Row>
