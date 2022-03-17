@@ -29,33 +29,35 @@ class Main extends Component {
     return (
       <div>
         <Jumbo />
-        <NavComp />
         <Switch>
           <Route path="/home" render={() => <Home home={this.props.home} />} />
-          <Route
-            path="/inform"
-            render={() => <Inform informList={this.props.inform} />}
-          />
-          <Route path="/connect" component={Connect} />
-          <Route
-            path="/reduce"
-            render={() => (
-              <Reduce
-                products={this.props.products}
-                waste={this.props.waste}
-                tips={this.props.tips}
-              />
-            )}
-          />
-          <Route
-            path="/tech"
-            render={() => <Tech tools={this.props.tools} />}
-          />
-          <Route path="/rescue" component={Rescue} />
-          <Route
-            path="/collab"
-            render={() => <Collab collab={this.props.collab} />}
-          />
+          <div>
+            <NavComp />
+            <Route
+              path="/inform"
+              render={() => <Inform informList={this.props.inform} />}
+            />
+            <Route path="/connect" component={Connect} />
+            <Route
+              path="/reduce"
+              render={() => (
+                <Reduce
+                  products={this.props.products}
+                  waste={this.props.waste}
+                  tips={this.props.tips}
+                />
+              )}
+            />
+            <Route
+              path="/tech"
+              render={() => <Tech tools={this.props.tools} />}
+            />
+            <Route path="/rescue" component={Rescue} />
+            <Route
+              path="/collab"
+              render={() => <Collab collab={this.props.collab} />}
+            />
+          </div>
         </Switch>
         <Footer />
       </div>
