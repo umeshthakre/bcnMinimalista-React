@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Title from "./content/TitleComponent";
+import React, { Component, useState } from "react";
+import Home from "./content/HomeComponent";
 import Inform from "./content/InformComponent";
 import Connect from "./content/ConnectComponent";
 import Reduce from "./content/ReduceComponent";
@@ -12,8 +12,9 @@ import NavComp from "./ui/NavBarComponent";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
+    home: state.home,
     inform: state.inform,
     products: state.products,
     waste: state.waste,
@@ -30,7 +31,7 @@ class Main extends Component {
         <Jumbo />
         <NavComp />
         <Switch>
-          <Route path="/titlemain" component={Title} />
+          <Route path="/home" render={() => <Home home={this.props.home} />} />
           <Route
             path="/inform"
             render={() => <Inform informList={this.props.inform} />}
@@ -62,4 +63,4 @@ class Main extends Component {
   }
 }
 
-export default  withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));

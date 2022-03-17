@@ -21,7 +21,7 @@ class Jumbo extends Component {
   render() {
     return (
       <Jumbotron fluid className="jumbotron-fluid">
-        <NavLink to="/titlemain">
+        <NavLink to="/home">
           <div className="container-fluid">
             <div className="row">
               <div className="col">
