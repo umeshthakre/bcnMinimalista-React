@@ -45,36 +45,40 @@ const Collab = (props) => {
             <p className="page-title">share your ideas</p>
           </Col>
         </Row>
+        <Row>
+          <Col className="form-subcaption">
+            <h4>We'd love to hear from you!</h4>
+          </Col>
+        </Row>
         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-          <Row>
-            <Col className="form-subcaption">
-              <h4>We'd love to hear from you!</h4>
-            </Col>
-          </Row>
-          <Row className="input-container">
-            <Col className="col-xs-12 col-md-6">
+          <Row className="form-group">
+            <Col className="">
               <Label htmlFor="name">Name</Label>
-              <div className="wide">
+              <div>
                 <Control.text model=".name" id="name" name="name" />
               </div>
             </Col>
-            <Col className="col-xs-12 col-md-6">
+          </Row>
+          <Row>
+            <Col className="">
               <Label htmlFor="email">Phone</Label>
-              <div className="wide">
+              <div>
                 <Control.text model=".phone" id="phone" name="phone" />
               </div>
             </Col>
-            <Col className="col-xs-12 col-md-12">
+          </Row>
+          <Row>
+            <Col className="">
               <Label htmlFor="name">Email</Label>
-              <div className="wide">
+              <div>
                 <Control.text model=".email" id="email" name="email" />
               </div>
             </Col>
           </Row>
           <Row>
-            <Col className="col-xs-12 col">
+            <Col className="">
               <Label htmlFor="message">Enter your message here</Label>
-              <div className="wide">
+              <div>
                 <Control.textarea
                   model=".message"
                   id="message"
@@ -85,14 +89,12 @@ const Collab = (props) => {
             </Col>
           </Row>
           <Row>
-            <Col md={{ size: 10, offset: 2 }}>
+            <Col>
               <Button type="submit" color="primary" className="btn-success">
                 Send Feedback
               </Button>
             </Col>
           </Row>
-
-          <Row>{fullCollab} </Row>
         </LocalForm>
       </Container>
     </React.Fragment>

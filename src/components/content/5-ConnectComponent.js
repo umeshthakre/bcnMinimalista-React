@@ -4,26 +4,24 @@ import {
   Row,
   Col,
   Label,
-  Button,
-  CardBody,
-  CardText,
+  Button
 } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/5-ConnectComponent.css";
 
-function RenderComments({fullComments}) {
-    return (
-      <Row>
-        <Col xs="9">
-          <CardBody>
-            <CardText>{fullComments.name}</CardText>
-            <CardText>{fullComments.forum}</CardText>
-            <CardText>{fullComments.message}</CardText>
-          </CardBody>
-        </Col>
-      </Row>
-    );
-}
+// function RenderComments({fullComments}) {
+//     return (
+//       <Row>
+//         <Col xs="9">
+//           <CardBody>
+//             <CardText>{fullComments.name}</CardText>
+//             <CardText>{fullComments.forum}</CardText>
+//             <CardText>{fullComments.message}</CardText>
+//           </CardBody>
+//         </Col>
+//       </Row>
+//     );
+// }
 
 class CommentForm extends Component {
   constructor(props) {
@@ -42,7 +40,6 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    // this.props.addComment(this.props.name, values.forum, values.comment)
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current state is: " + JSON.stringify(values));
     this.props.resetFeedbackForm();
@@ -84,7 +81,7 @@ class CommentForm extends Component {
               rows="4"
             />
           </div>
-          <Button type="submit" color="primary">
+          <Button type="submit" className="btn-success">
             Submit Comment
           </Button>
         </LocalForm>
@@ -97,10 +94,10 @@ function Connect(props) {
 
   let fullComments;
   if(props.comments) {
-    fullComments = props.comments.comments.map((comment) => {
+    fullComments = props.comments.map((comment) => {
       return (
           <div key={comment.id} className="col-md-5 m-1">
-            <RenderComments comments={props.comments}/>
+            {props.comment}
           </div>
       );
     });
@@ -115,23 +112,12 @@ function Connect(props) {
             <p className="page-title">chat with your community</p>
           </Col>
         </Row>
-        <CommentForm comments={this.props.comments} />
-        <RenderComments comments={props.comments}/>
+        <CommentForm comments={props.comments} />
+        {/* <RenderComments comments={props.comments}/> */}
+        {fullComments}
       </Container>
     </React.Fragment>
   );
 }
 
 export default Connect;
-
-// const AddComment = (props) => {
-//   return (
-//     <LocalForm onSubmit={(values) => props.handleSubmit(values)}>
-
-//     </LocalForm>
-//   );
-// };
-
-// const CommentList = (props) => {
-//   return <div>comments list here </div>;
-// };
