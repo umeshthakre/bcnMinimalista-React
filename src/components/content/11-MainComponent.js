@@ -37,7 +37,7 @@ class Main extends Component {
               path="/inform"
               render={() => <Inform informList={this.props.inform} />}
             />
-            <Route path="/connect" component={Connect} />
+            <Route path="/connect" render={() => <Connect comments={this.props.comments}/>}/>
             <Route
               path="/reduce"
               render={() => (
