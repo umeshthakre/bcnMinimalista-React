@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col, Container} from "reactstrap";
 
 import 'bootstrap-social/bootstrap-social.css';
-import "../styles/FooterComponent.css";
+import "../styles/10-FooterComponent.css";
 
 const Footer = () => {
   return (

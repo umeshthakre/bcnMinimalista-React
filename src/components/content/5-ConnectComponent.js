@@ -1,5 +1,35 @@
 import React, { useState } from "react";
-import { Button, Card } from 'reactstrap';
+import { Container, Row, Col, Card, Button } from "reactstrap";
+import "../styles/5-ConnectComponent.css";
+
+const Connect = () => {
+  const [commentsList, setCommentsList] = useState([]);
+
+  const addCommentHandler = (uEmail, uComment) => {
+    setCommentsList((prevCommentsList) => {
+      return [
+        ...prevCommentsList,
+        { name: uEmail, age: uComment, id: Math.random().toString() },
+      ];
+    });
+  };
+  return (
+    <React.Fragment>
+      <Container>
+        <Row>
+          <Col>
+            {" "}
+            <p className="page-title">chat with your community</p>
+          </Col>
+        </Row>
+        <AddComment onAddComment={addCommentHandler} />
+        <CommentList comments={commentsList} />
+      </Container>
+    </React.Fragment>
+  );
+};
+
+export default Connect;
 
 const AddComment = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -44,4 +74,16 @@ const AddComment = (props) => {
   );
 };
 
-export default AddComment;
+const CommentList = (props) => {
+  return (
+    <div>
+      <ul>
+        {props.comments.map((comment) => (
+          <p key={comment.id}>
+            {comment.email} - {comment.comment}
+          </p>
+        ))}
+      </ul>
+    </div>
+  );
+};

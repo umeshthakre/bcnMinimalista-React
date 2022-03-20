@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, CardBody, CardTitle, CardImg } from 'reactstrap';
 import { NavLink } from "react-router-dom";
+import '../styles/3-HomeComponent.css';
 
 
 function RenderHomeCards ({ cardList }) {

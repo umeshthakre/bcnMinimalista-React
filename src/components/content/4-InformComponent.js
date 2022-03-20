@@ -10,7 +10,7 @@ import {
   CardText,
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/InformComponent.css";
+import "../styles/4-InformComponent.css";
 
 function RenderInformList({ snippet }) {
   console.log(snippet)

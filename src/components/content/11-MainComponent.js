@@ -1,14 +1,14 @@
-import React, { Component, useState } from "react";
-import Home from "./content/HomeComponent";
-import Inform from "./content/InformComponent";
-import Connect from "./content/ConnectComponent";
-import Reduce from "./content/ReduceComponent";
-import Tech from "./content/TechComponent";
-import Rescue from "./content/RescueComponent";
-import Collab from "./content/CollabComponent";
-import Footer from "./ui/FooterComponent";
-import Jumbo from "./ui/JumbotronComponent";
-import NavComp from "./ui/NavBarComponent";
+import React, { Component } from "react";
+import Home from "./3-HomeComponent";
+import Inform from "./4-InformComponent";
+import Connect from "./5-ConnectComponent";
+import Reduce from "./6-ReduceComponent";
+import Tech from "./7-TechComponent";
+import Rescue from "./8-RescueComponent";
+import Collab from "./9-CollabComponent";
+import Footer from "./10-FooterComponent";
+import Jumbo from "./1-JumbotronComponent";
+import NavComp from "./2-NavBarComponent";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 

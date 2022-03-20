@@ -9,7 +9,7 @@ import {
   CardText,
   CardTitle,
 } from "reactstrap";
-import "../styles/ReduceComponent.css";
+import "../styles/6-ReduceComponent.css";
 
 function RenderProductList({ productsList }) {
   return (

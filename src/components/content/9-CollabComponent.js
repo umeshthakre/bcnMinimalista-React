@@ -3,14 +3,13 @@ import {
   Container,
   Row,
   Col,
-  Form,
   Label,
   CardBody,
   CardText,
   Button,
 } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
-import "../styles/CollabComponent.css";
+import "../styles/9-CollabComponent.css";
 
 function RenderCollabList({ collabList }) {
   return (

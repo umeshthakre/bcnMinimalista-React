@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import "../styles/RescueComponent.css";
+import "../styles/8-RescueComponent.css";
 
 const Rescue = () => {
   return (

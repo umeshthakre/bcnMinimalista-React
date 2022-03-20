@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron } from "reactstrap";
 import { NavLink } from "react-router-dom";
-import "../styles/JumbotronComponent.css";
+import "../styles/1-JumbotronComponent.css";
 
 class Jumbo extends Component {
   constructor(props) {

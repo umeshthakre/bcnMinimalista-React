@@ -8,7 +8,7 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/NavBarComponent.css";
+import "../styles/2-NavBarComponent.css";
 
 
 class NavComp extends Component {
