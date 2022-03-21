@@ -13,15 +13,11 @@ import "../styles/9-CollabComponent.css";
 
 function RenderCollabList({ collabList }) {
   return (
-    <Row>
+    <div className="flex flex-column flex-basis-30 bg-4">
       <a href={collabList.src} target="_blank" rel="noreferrer">
-        <Col xs="9">
-          <CardBody>
-            <CardText>{collabList.name}</CardText>
-          </CardBody>
-        </Col>
+        <p className="flex-text">{collabList.name}</p>
       </a>
-    </Row>
+    </div>
   );
 }
 
@@ -94,6 +90,11 @@ const Collab = (props) => {
                 Send Feedback
               </Button>
             </Col>
+          </Row>
+          <Row>
+            <div className="flex flex-row flex-wrap h-100 flex-collab">
+              {fullCollab}
+            </div>
           </Row>
         </LocalForm>
       </Container>

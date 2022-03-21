@@ -1,25 +1,32 @@
 import React from "react";
-import { Container, Row, Col, CardBody, CardText, Button, Label } from "reactstrap";
+import {
+  Container,
+  Row,
+  Col,
+  CardBody,
+  CardText,
+  Button,
+  Label,
+} from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/7-TechComponent.css";
 
 function RenderTechList({ techList }) {
   return (
-    <Row>
+    <div className="flex flex-column flex-basis-50 bg-1">
       <a href={techList.src} target="_blank" rel="noreferrer">
-        <Col xs="9">
-          <CardBody>
-            <CardText>{techList.name}</CardText>
-          </CardBody>
-        </Col>
+        <p class="flex-text">{techList.name}</p>
       </a>
-    </Row>
+    </div>
   );
 }
 
 const TechForm = () => {
   return (
-    <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+    <LocalForm
+      id="myForm__tech"
+      onSubmit={(values) => this.handleSubmit(values)}
+    >
       <Row className="form-group">
         <Label htmlFor="firstName" md={2}></Label>
         <Col md={10}>
@@ -57,8 +64,7 @@ const TechForm = () => {
         </Col>
       </Row>
       <Row className="form-group">
-        <Label htmlFor="meat" md={2}>
-        </Label>
+        <Label htmlFor="meat" md={2}></Label>
         <Col md={10}>
           <Control.text
             model=".meat"
@@ -108,7 +114,7 @@ const Tech = (props) => {
         </Row>
         <TechForm />
         <Row>
-          <Col>{techTools} </Col>
+          <div className="flex flex-row flex-wrap h-100">{techTools}</div>
         </Row>
       </Container>
     </React.Fragment>

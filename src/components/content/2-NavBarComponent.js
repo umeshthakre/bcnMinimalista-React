@@ -5,11 +5,11 @@ import {
   NavbarToggler,
   Collapse,
   NavItem,
+  Container,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/2-NavBarComponent.css";
-
 
 class NavComp extends Component {
   constructor(props) {
@@ -29,11 +29,8 @@ class NavComp extends Component {
   render() {
     return (
       <Navbar expand="sm" sticky="top">
-        <div className="container">
-          {/* <NavbarBrand className="mr-auto" href="/">
-            <img height="30" width="30" />
-          </NavbarBrand> */}
-          <NavbarToggler onClick={this.toggleNav} className="me-2 fa fa-bars"/>
+        <Container>
+          <NavbarToggler onClick={this.toggleNav} className="me-2 fa fa-bars" />
           <Collapse isOpen={this.state.isNavOpen} navbar>
             <Nav className="navbar" navbar>
               <NavItem className="navitem">
@@ -68,7 +65,7 @@ class NavComp extends Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </div>
+        </Container>
       </Navbar>
     );
   }

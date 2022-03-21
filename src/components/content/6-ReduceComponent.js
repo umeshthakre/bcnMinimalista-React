@@ -4,6 +4,7 @@ import {
   Row,
   Col,
   Button,
+  Card,
   CardImg,
   CardBody,
   CardText,
@@ -13,46 +14,51 @@ import "../styles/6-ReduceComponent.css";
 
 function RenderProductList({ productsList }) {
   return (
-    <Row>
+    <Card className="card">
       <a href={productsList.site} target="_blank" rel="noreferrer">
-        <Col xs="3">
-          <CardImg alt="alt" src={productsList.src} left width="10%" />
-        </Col>
-        <Col xs="9">
-          <CardBody>
-            <CardTitle tag="h5">{productsList.title}</CardTitle>
-            <CardText>{productsList.price}</CardText>
-          </CardBody>
-        </Col>
+        <CardImg
+          alt="alt"
+          src={productsList.src}
+          left
+          width="10%"
+          className="card-img"
+        />
+
+        <CardBody className="card-body">
+          <CardTitle tag="h5" className="card-title">
+            {productsList.title}
+          </CardTitle>
+          <CardText className="card-text">{productsList.price}</CardText>
+        </CardBody>
       </a>
-    </Row>
+    </Card>
   );
 }
 
 function RenderWasteList({ wasteList }) {
   return (
-    <Row>
+    <Card>
       <a href={wasteList.site} target="_blank" rel="noreferrer">
-        <Col xs="9">
-          <CardBody>
-            <CardTitle tag="h5">{wasteList.title}</CardTitle>
-            <CardText>{wasteList.subtitle}</CardText>
-          </CardBody>
-        </Col>
+        <CardBody className="card-body text-only">
+          <CardTitle tag="h5" className="card-title waste-title">
+            {wasteList.title}
+          </CardTitle>
+          <CardText className="card-text">{wasteList.subtitle}</CardText>
+        </CardBody>
       </a>
-    </Row>
+    </Card>
   );
 }
 
 function RenderTipsList({ tipsList }) {
   return (
-    <Row>
-        <Col xs="9">
-          <CardBody>
-            <CardTitle tag="h5">{tipsList.title}</CardTitle>
-          </CardBody>
-        </Col>
-    </Row>
+    <Card>
+      <CardBody className="card-body text-only">
+        <CardTitle tag="h5" className="card-title waste-title">
+          {tipsList.title}
+        </CardTitle>
+      </CardBody>
+    </Card>
   );
 }
 

@@ -30,14 +30,21 @@ class Main extends Component {
       <div>
         <Jumbo />
         <Switch>
-          <Route path="/home" render={() => <Home home={this.props.home} />} />
+          <Route
+            path="/home"
+            default
+            render={() => <Home home={this.props.home} />}
+          />
           <div>
             <NavComp />
             <Route
               path="/inform"
               render={() => <Inform informList={this.props.inform} />}
             />
-            <Route path="/connect" render={() => <Connect comments={this.props.comments}/>}/>
+            <Route
+              path="/connect"
+              render={() => <Connect comments={this.props.comments} />}
+            />
             <Route
               path="/reduce"
               render={() => (

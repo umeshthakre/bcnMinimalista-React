@@ -13,32 +13,45 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/4-InformComponent.css";
 
 function RenderInformList({ snippet }) {
-  console.log(snippet)
+  console.log(snippet);
   return (
-    <Row>
-      <a href={snippet.src} target="_blank" rel="noreferrer">
-        <Col xs="3">
-          <CardImg alt={snippet.alt} src={snippet.img} left width="10%" />
-        </Col>
-        <Col xs="9">
-          <CardBody>
-            <CardTitle tag="h5">{snippet.title}</CardTitle>
-            <CardText>{snippet.caption}</CardText>
-          </CardBody>
-        </Col>
-      </a>
+    <Row className="snippet-row">
+      <Col>
+        <img src={snippet.img} className="img-fluid" alt={snippet.alt} />
+      </Col>
+      <Col className="snippet">
+        <a href={snippet.src} target="_blank" rel="noreferrer">
+          <p className="snippet-header text-responsive">{snippet.title}</p>
+          <p className="snippet-body text-responsive">{snippet.caption}</p>
+        </a>
+      </Col>
     </Row>
   );
+
+  //   <Row>
+  //   <a href={snippet.src} target="_blank" rel="noreferrer">
+  //     <Col xs="3">
+  //       <CardImg alt={snippet.alt} src={snippet.img} left width="10%" />
+  //     </Col>
+  //     <Col xs="9">
+  //       <CardBody>
+  //         <CardTitle tag="h5">{snippet.title}</CardTitle>
+  //         <CardText>{snippet.caption}</CardText>
+  //       </CardBody>
+  //     </Col>
+  //   </a>
+  // </Row>
+  // );
 }
 
 function Inform(props) {
   let fullInform;
-  if(props.informList) {
+  if (props.informList) {
     fullInform = props.informList.map((inform) => {
       return (
-          <div key={inform.id} className="col-md-5 m-1">
-            <RenderInformList snippet={inform}/>
-          </div>
+        <div key={inform.id} className="col-md-5 m-1">
+          <RenderInformList snippet={inform} />
+        </div>
       );
     });
   }
@@ -61,7 +74,7 @@ function Inform(props) {
             </Button>
           </Col>
         </Row>
-        <Row>{fullInform} News articles go here </Row>
+        {fullInform}
       </Container>
     </React.Fragment>
   );

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Jumbotron } from "reactstrap";
+import { Jumbotron, Container, Row, Col } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/1-JumbotronComponent.css";
 
 class Jumbo extends Component {
   constructor(props) {
     super(props);
-    //binds the function to component, when togglenav is called the this keyword will refer corectly to component
     this.toggleNav = this.toggleNav.bind(this);
     this.state = {
       isNavOpen: false,
@@ -20,15 +19,15 @@ class Jumbo extends Component {
   }
   render() {
     return (
-      <Jumbotron fluid className="jumbotron-fluid">
+      <Jumbotron fluid className="jumbo">
         <NavLink to="/home">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col">
+          <Container fluid>
+            <Row>
+              <Col>
                 <h1>barcelona minimalista</h1>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </NavLink>
       </Jumbotron>
     );
