@@ -9,19 +9,6 @@ import {
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/5-ConnectComponent.css";
 
-// function RenderComments({fullComments}) {
-//     return (
-//       <Row>
-//         <Col xs="9">
-//           <CardBody>
-//             <CardText>{fullComments.name}</CardText>
-//             <CardText>{fullComments.forum}</CardText>
-//             <CardText>{fullComments.message}</CardText>
-//           </CardBody>
-//         </Col>
-//       </Row>
-//     );
-// }
 
 class CommentForm extends Component {
   constructor(props) {
@@ -42,7 +29,6 @@ class CommentForm extends Component {
   handleSubmit(values) {
     console.log("Current state is: " + JSON.stringify(values));
     alert("Current state is: " + JSON.stringify(values));
-    this.props.resetFeedbackForm();
   }
   render() {
     return (

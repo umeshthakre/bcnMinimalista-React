@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Label,
-  Button,
-} from "reactstrap";
+import { Container, Row, Col, Label, Button } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/9-CollabComponent.css";
 
@@ -45,43 +39,27 @@ const Collab = (props) => {
           </Col>
         </Row>
         <LocalForm>
-          <Row className="form-group">
-            <Col className="">
-              <Label htmlFor="name">Name</Label>
-              <div>
-                <Control.text model=".name" id="name" name="name" />
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="">
-              <Label htmlFor="email">Phone</Label>
-              <div>
-                <Control.text model=".phone" id="phone" name="phone" />
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="">
-              <Label htmlFor="name">Email</Label>
-              <div>
-                <Control.text model=".email" id="email" name="email" />
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="">
-              <Label htmlFor="message">Enter your message here</Label>
-              <div>
-                <Control.textarea
-                  model=".message"
-                  id="message"
-                  name="message"
-                  rows="6"
-                />
-              </div>
-            </Col>
-          </Row>
+          <div className="form-group">
+            <Label htmlFor="name">Name</Label>
+            <Control.text model=".name" id="name" name="name" className="form-control"/>
+          </div>
+          <div className="form-group">
+            <Label htmlFor="email">Phone</Label>
+            <Control.text model=".phone" id="phone" name="phone" className="form-control"/>
+          </div>
+          <div className="form-group">
+            <Label htmlFor="name">Email</Label>
+            <Control.text model=".email" id="email" name="email" className="form-control"/>
+          </div>
+          <div className="form-group">
+            <Label htmlFor="message">Enter your message here</Label>
+            <Control.textarea
+              model=".message"
+              id="message"
+              name="message"
+              rows="6" className="form-control"
+            />
+          </div>
           <Row>
             <Col>
               <Button type="submit" color="primary" className="btn-success">

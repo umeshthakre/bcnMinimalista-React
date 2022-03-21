@@ -18,18 +18,18 @@ class CollabModal extends Component {
 
   handleSubmit(values) {
     this.toggleModal();
-    alert("Comment submitted: " + JSON.stringify(values));
+    alert("suggestion submitted: " + JSON.stringify(values));
   }
 
   render() {
     return (
       <React.Fragment>
         <Modal>
-          <ModalHeader>collab and listen</ModalHeader>
+          <ModalHeader>share your thoughts</ModalHeader>
           <ModalBody>
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <div className="form-group">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">name</Label>
                 <Control.text
                   model=".name"
                   name="name"
@@ -38,7 +38,7 @@ class CollabModal extends Component {
                 />
               </div>
               <div className="form-group">
-                <Label htmlFor="comment">Comment</Label>
+                <Label htmlFor="comment">thought</Label>
                 <Control.text
                   model=".comment"
                   name="comment"
@@ -46,6 +46,7 @@ class CollabModal extends Component {
                   className="form-control"
                 />
               </div>
+              <Button type="submit">Submit</Button>
             </LocalForm>
           </ModalBody>
         </Modal>
