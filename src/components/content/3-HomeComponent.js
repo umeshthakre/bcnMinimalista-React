@@ -9,7 +9,7 @@ function RenderHomeCards({ cardList }) {
       <NavLink to={cardList.link}>
         <Row>
           <Col className="carousel-inner">
-            <img src={cardList.src} className="home__img-fluid"></img>
+            <img src={cardList.src} alt="" className="home__img-fluid"></img>
             <div className="carousel-caption background text">
               <p className="carousel-caption-p">{cardList.name}</p>
             </div>

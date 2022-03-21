@@ -63,6 +63,7 @@ function RenderTipsList({ tipsList }) {
 }
 
 const Reduce = (props) => {
+
   let prodList;
   if (props.products) {
     prodList = props.products.map((products) => {
@@ -102,57 +103,31 @@ const Reduce = (props) => {
           <Col>
             <p className="page-title">minimize carbon output and waste</p>
           </Col>
-          {/* <Col sm="3" xs="5">
-            <Button
-              className="modal-button"
-              color="success"
-              outline
-              id="suggestButton"
-            >
-              Make a Suggestion
-            </Button>
-          </Col> */}
-        </Row>
-        <Row>
-          <Col>
-            <h3>Goods the encourage longevity</h3>
-          </Col>
           <Button
             className="modal-button"
             color="success"
             outline
             id="suggestButton"
           >
-            Make a Suggestion
+            Suggest any additions to this page!
           </Button>
+        </Row>
+        <Row>
+          <Col>
+            <h3>Goods the encourage longevity</h3>
+          </Col>
         </Row>
         <Row>{prodList}</Row>
         <Row>
           <Col>
             <h3>Waste and Recycling Services</h3>
           </Col>
-          <Button
-            className="modal-button"
-            color="success"
-            outline
-            id="suggestButton"
-          >
-            Make a Suggestion
-          </Button>
         </Row>
         <Row>{wasteList}</Row>
         <Row>
           <Col>
             <h3>Tips and Tricks</h3>
           </Col>
-          <Button
-            className="modal-button"
-            color="success"
-            outline
-            id="suggestButton"
-          >
-            Make a Suggestion
-          </Button>
         </Row>
         <Row>{tipsList}</Row>
       </Container>
@@ -161,3 +136,19 @@ const Reduce = (props) => {
 };
 
 export default Reduce;
+
+//button in case used for later
+
+/* <Row>
+<Col>
+  <h3>Tips and Tricks</h3>
+</Col>
+<Button
+  className="modal-button"
+  color="success"
+  outline
+  id="suggestButton"
+>
+  Make a Suggestion
+</Button>
+</Row> */

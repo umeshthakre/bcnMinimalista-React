@@ -4,8 +4,6 @@ import {
   Row,
   Col,
   Label,
-  CardBody,
-  CardText,
   Button,
 } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
@@ -46,7 +44,7 @@ const Collab = (props) => {
             <h4>We'd love to hear from you!</h4>
           </Col>
         </Row>
-        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+        <LocalForm>
           <Row className="form-group">
             <Col className="">
               <Label htmlFor="name">Name</Label>

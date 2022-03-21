@@ -3,11 +3,7 @@ import {
   Container,
   Row,
   Col,
-  Button,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardText,
+  Button
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/4-InformComponent.css";
@@ -70,7 +66,7 @@ function Inform(props) {
               outline
               id="suggestButton"
             >
-              Make a Suggestion
+              Suggest article
             </Button>
           </Col>
         </Row>
