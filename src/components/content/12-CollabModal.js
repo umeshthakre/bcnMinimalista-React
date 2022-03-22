@@ -46,7 +46,7 @@ class CollabModal extends Component {
                   className="form-control"
                 />
               </div>
-              <Button type="submit">Submit</Button>
+              <Button type="submit">submit</Button>
             </LocalForm>
           </ModalBody>
         </Modal>

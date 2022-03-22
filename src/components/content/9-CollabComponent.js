@@ -3,6 +3,7 @@ import { Container, Row, Col, Label, Button } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/9-CollabComponent.css";
 
+
 function RenderCollabList({ collabList }) {
   return (
     <div className="flex flex-column flex-basis-30 bg-4">
@@ -41,15 +42,30 @@ const Collab = (props) => {
         <LocalForm>
           <div className="form-group">
             <Label htmlFor="name">Name</Label>
-            <Control.text model=".name" id="name" name="name" className="form-control"/>
+            <Control.text
+              model=".name"
+              id="name"
+              name="name"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <Label htmlFor="email">Phone</Label>
-            <Control.text model=".phone" id="phone" name="phone" className="form-control"/>
+            <Control.text
+              model=".phone"
+              id="phone"
+              name="phone"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <Label htmlFor="name">Email</Label>
-            <Control.text model=".email" id="email" name="email" className="form-control"/>
+            <Control.text
+              model=".email"
+              id="email"
+              name="email"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <Label htmlFor="message">Enter your message here</Label>
@@ -57,7 +73,8 @@ const Collab = (props) => {
               model=".message"
               id="message"
               name="message"
-              rows="6" className="form-control"
+              rows="6"
+              className="form-control"
             />
           </div>
           <Row>
@@ -76,6 +93,6 @@ const Collab = (props) => {
       </Container>
     </React.Fragment>
   );
-};
+}
 
 export default Collab;
