@@ -83,7 +83,7 @@ function Connect(props) {
     fullComments = props.comments.map((comment) => {
       return (
           <div key={comment.id} className="col-md-5 m-1">
-            {props.comment}
+            {comment.name}, {comment.message}
           </div>
       );
     });

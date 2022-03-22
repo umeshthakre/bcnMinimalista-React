@@ -21,6 +21,7 @@ const mapStateToProps = (state) => {
     tips: state.tips,
     tools: state.tools,
     collab: state.collab,
+    comments: state.comments
   };
 };
 
