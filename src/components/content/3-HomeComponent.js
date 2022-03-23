@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/3-HomeComponent.css";
-import { Loading } from "./LoadingComponent";
+import { Loading } from "./13-LoadingComponent";
+import { Fade, Stagger } from "react-animation-components";
 
 function RenderHomeCards({ cardList, isLoading, errMess }) {
   if (isLoading) {
@@ -21,22 +22,32 @@ function RenderHomeCards({ cardList, isLoading, errMess }) {
       </div>
     );
   }
-  return cardList.map((card) => {
-    return (
-      <div key={card.id} className="">
-        <NavLink to={card.link}>
-          <Row>
-            <Col className="carousel-inner">
-              <img src={card.src} alt="" className="home__img-fluid"></img>
-              <div className="carousel-caption background text">
-                <p className="carousel-caption-p">{card.name}</p>
-              </div>
-            </Col>
-          </Row>
-        </NavLink>
-      </div>
-    );
-  });
+  return (
+    <Stagger in>
+      {cardList.map((card) => {
+        return (
+          <Fade in key={card.id}>
+            <div className="">
+              <NavLink to={card.link}>
+                <Row>
+                  <Col className="carousel-inner">
+                    <img
+                      src={card.src}
+                      alt=""
+                      className="home__img-fluid"
+                    ></img>
+                    <div className="carousel-caption background text">
+                      <p className="carousel-caption-p">{card.name}</p>
+                    </div>
+                  </Col>
+                </Row>
+              </NavLink>
+            </div>
+          </Fade>
+        );
+      })}
+    </Stagger>
+  );
 }
 
 class Home extends Component {

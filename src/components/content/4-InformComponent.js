@@ -12,7 +12,7 @@ import {
 import { Control, LocalForm } from "react-redux-form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/4-InformComponent.css";
-import { Loading } from "./LoadingComponent";
+import { Loading } from "./13-LoadingComponent";
 
 function RenderInformList({ informList, isLoading, errMess }) {
   if (isLoading) {

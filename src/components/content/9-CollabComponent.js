@@ -21,6 +21,12 @@ class Collab extends Component {
   constructor(props) {
     super(props);
   }
+
+  handleSubmit(values) {
+    console.log("Current state is: " + JSON.stringify(values));
+    alert("Current state is: " + JSON.stringify(values));
+    this.props.resetCollabForm();
+  }
   render() {
     return (
       <React.Fragment>
@@ -36,7 +42,7 @@ class Collab extends Component {
               <h4>We'd love to hear from you!</h4>
             </Col>
           </Row>
-          <LocalForm>
+          <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
             <div className="form-group">
               <Label htmlFor="name">Name</Label>
               <Control.text
