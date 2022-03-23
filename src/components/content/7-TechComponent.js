@@ -1,22 +1,20 @@
-import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Label,
-} from "reactstrap";
+import React, { Component } from "react";
+import { Container, Row, Col, Button, Label } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/7-TechComponent.css";
 
 function RenderTechList({ techList }) {
-  return (
-    <div className="flex flex-column flex-basis-50 bg-1">
-      <a href={techList.src} target="_blank" rel="noreferrer">
-        <p class="flex-text">{techList.name}</p>
-      </a>
-    </div>
-  );
+  return techList.map((tools) => {
+    return (
+      <div key={tools.id} className="col-md-5 m-1">
+        <div className="flex flex-column flex-basis-50 bg-1">
+          <a href={tools.src} target="_blank" rel="noreferrer">
+            <p class="flex-text">{tools.name}</p>
+          </a>
+        </div>
+      </div>
+    );
+  });
 }
 
 const TechForm = () => {
@@ -81,42 +79,39 @@ const TechForm = () => {
   );
 };
 
-const Tech = (props) => {
-  let techTools;
-  if (props.tools) {
-    techTools = props.tools.map((tools) => {
-      return (
-        <div key={tools.id} className="col-md-5 m-1">
-          <RenderTechList techList={tools} />
-        </div>
-      );
-    });
+class Tech extends Component {
+  constructor(props) {
+    super(props);
   }
-  return (
-    <React.Fragment>
-      <Container>
-        <Row>
-          <Col>
-            {" "}
-            <p className="page-title">tech and tools</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            Megacorporations must be held accountable for their contribution to
-            global warming through policy and taxation, don’t lose sight of
-            that! However, on an individual basis, it’s helpful to check in on
-            your part too. Check in below with your water footprint, measured in
-            gallons of water.
-          </Col>
-        </Row>
-        <TechForm />
-        <Row>
-          <div className="flex flex-row flex-wrap h-100">{techTools}</div>
-        </Row>
-      </Container>
-    </React.Fragment>
-  );
-};
+  render() {
+    return (
+      <React.Fragment>
+        <Container>
+          <Row>
+            <Col>
+              {" "}
+              <p className="page-title">tech and tools</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              Megacorporations must be held accountable for their contribution
+              to global warming through policy and taxation, don’t lose sight of
+              that! However, on an individual basis, it’s helpful to check in on
+              your part too. Check in below with your water footprint, measured
+              in gallons of water.
+            </Col>
+          </Row>
+          <TechForm />
+          <Row>
+            <div className="flex flex-row flex-wrap h-100">
+              <RenderTechList techList={this.props.tools} />
+            </div>
+          </Row>
+        </Container>
+      </React.Fragment>
+    );
+  }
+}
 
 export default Tech;

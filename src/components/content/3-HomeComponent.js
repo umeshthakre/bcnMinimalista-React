@@ -7,7 +7,7 @@ import "../styles/3-HomeComponent.css";
 function RenderHomeCards({ cardList }) {
   return cardList.map((card) => {
     return (
-      <div key={card.id} className="col-md-5 m-1">
+      <div key={card.id} className="">
         <NavLink to={card.link}>
           <Row>
             <Col className="carousel-inner">

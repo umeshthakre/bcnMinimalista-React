@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Label,
-  Button
-} from "reactstrap";
+import { Container, Row, Col, Label, Button } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/5-ConnectComponent.css";
 
+function RenderComments({ commentList }) {
+  return commentList.map((comment) => {
+    return (
+      <div key={comment.id} className="col-md-5 m-1">
+        {comment.name}, {comment.message}
+      </div>
+    );
+  });
+}
 
 class CommentForm extends Component {
   constructor(props) {
@@ -76,34 +79,27 @@ class CommentForm extends Component {
   }
 }
 
-function Connect(props) {
-
-  let fullComments;
-  if(props.comments) {
-    fullComments = props.comments.map((comment) => {
-      return (
-          <div key={comment.id} className="col-md-5 m-1">
-            {comment.name}, {comment.message}
-          </div>
-      );
-    });
+class Connect extends Component {
+  constructor(props) {
+    super(props);
   }
-
-  return (
-    <React.Fragment>
-      <Container>
-        <Row>
-          <Col>
-            {" "}
-            <p className="page-title">chat with your community</p>
-          </Col>
-        </Row>
-        <CommentForm comments={props.comments} />
-        {/* <RenderComments comments={props.comments}/> */}
-        {fullComments}
-      </Container>
-    </React.Fragment>
-  );
+  render() {
+    return (
+      <React.Fragment>
+        <Container>
+          <Row>
+            <Col>
+              {" "}
+              <p className="page-title">chat with your community</p>
+            </Col>
+          </Row>
+          <CommentForm comments={this.props.comments} />
+          {/* <RenderComments comments={props.comments}/> */}
+          <RenderComments commentList={this.props.comments} />
+        </Container>
+      </React.Fragment>
+    );
+  }
 }
 
 export default Connect;
