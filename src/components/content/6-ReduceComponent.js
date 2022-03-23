@@ -28,9 +28,9 @@ function RenderProductList({ productsList }) {
 
             <CardBody className="card-body">
               <CardTitle tag="h5" className="card-title">
-                {productsList.title}
+                {product.title}
               </CardTitle>
-              <CardText className="card-text">{productsList.price}</CardText>
+              <CardText className="card-text">{product.price}</CardText>
             </CardBody>
           </a>
         </Card>

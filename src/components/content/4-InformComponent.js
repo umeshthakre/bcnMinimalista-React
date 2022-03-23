@@ -12,8 +12,25 @@ import {
 import { Control, LocalForm } from "react-redux-form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/4-InformComponent.css";
+import { Loading } from "./LoadingComponent";
 
-function RenderInformList({ informList }) {
+function RenderInformList({ informList, isLoading, errMess }) {
+  if (isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+  if (errMess) {
+    return (
+      <div className="container">
+        <div className="row">{errMess}</div>
+      </div>
+    );
+  }
   return informList.map((inform) => {
     return (
       <div key={inform.id} className="col-md-5 m-1">
@@ -72,7 +89,11 @@ class Inform extends Component {
               </Button>
             </Col>
           </Row>
-          <RenderInformList informList={this.props.informList} />
+          <RenderInformList
+            informList={this.props.informList}
+            isLoading={this.props.informLoading}
+            errMess={this.props.informErrMess}
+          />
         </Container>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader>share your thoughts</ModalHeader>

@@ -8,6 +8,7 @@ function RenderComments({ commentList }) {
     return (
       <div key={comment.id} className="col-md-5 m-1">
         {comment.name}, {comment.message}
+        <p>Posted on {comment.date}</p>
       </div>
     );
   });
@@ -18,8 +19,8 @@ class CommentForm extends Component {
     super(props);
     this.state = {
       name: "",
-      comment: "",
-      forum: "Chit-Chat",
+      message: "",
+      forum: "",
       touched: {
         name: false,
         comment: false,
@@ -30,8 +31,12 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current state is: " + JSON.stringify(values));
-    alert("Current state is: " + JSON.stringify(values));
+    this.props.addComment(
+      this.props.id,
+      values.name,
+      values.forum,
+      values.message
+    );
   }
   render() {
     return (
@@ -63,9 +68,9 @@ class CommentForm extends Component {
           <div className="form-group">
             <Label htmlFor="comment">Comment</Label>
             <Control.textarea
-              model=".comment"
-              name="comment"
-              id="comment"
+              model=".message"
+              name="message"
+              id="message"
               className="form-control"
               rows="4"
             />
@@ -93,7 +98,10 @@ class Connect extends Component {
               <p className="page-title">chat with your community</p>
             </Col>
           </Row>
-          <CommentForm comments={this.props.comments} />
+          <CommentForm
+            comments={this.props.comments}
+            addComment={this.props.addComment}
+          />
           {/* <RenderComments comments={props.comments}/> */}
           <RenderComments commentList={this.props.comments} />
         </Container>

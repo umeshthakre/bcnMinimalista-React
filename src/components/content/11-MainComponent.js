@@ -11,6 +11,7 @@ import Jumbo from "./1-JumbotronComponent";
 import NavComp from "./2-NavBarComponent";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { addComment, fetchInform, fetchHome } from "../../redux/ActionCreators";
 
 const mapStateToProps = (state) => {
   return {
@@ -21,11 +22,22 @@ const mapStateToProps = (state) => {
     tips: state.tips,
     tools: state.tools,
     collab: state.collab,
-    comments: state.comments
+    comments: state.comments,
   };
 };
 
+const mapDispatchToProps = {
+  addComment: (id, name, forum, message, date) =>
+    addComment(id, name, forum, message, date),
+  fetchInform: () => fetchInform(),
+  fetchHome: () => fetchHome(),
+};
+
 class Main extends Component {
+  componentDidMount() {
+    this.props.fetchInform();
+    this.props.fetchHome();
+  }
   render() {
     return (
       <div>
@@ -34,17 +46,34 @@ class Main extends Component {
           <Route
             path="/home"
             default
-            render={() => <Home home={this.props.home} />}
+            render={() => (
+              <Home
+                homeList={this.props.home.home}
+                homeLoading={this.props.home.isLoading}
+                homeErrMess={this.props.home.errMess}
+              />
+            )}
           />
           <div>
             <NavComp />
             <Route
               path="/inform"
-              render={() => <Inform informList={this.props.inform} />}
+              render={() => (
+                <Inform
+                  informList={this.props.inform.inform}
+                  informLoading={this.props.inform.isLoading}
+                  informErrMess={this.props.inform.errMess}
+                />
+              )}
             />
             <Route
               path="/connect"
-              render={() => <Connect comments={this.props.comments} />}
+              render={() => (
+                <Connect
+                  comments={this.props.comments}
+                  addComment={this.props.addComment}
+                />
+              )}
             />
             <Route
               path="/reduce"
@@ -73,4 +102,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

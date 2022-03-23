@@ -1,10 +1,28 @@
-import { createStore } from 'redux';
-import { Reducer, initialState } from './reducer';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import { Collab } from './collab';
+import { Comments } from './comments';
+import { Home } from './home';
+import { Inform } from './inform';
+import { ReduceProducts } from './reduceproducts';
+import { ReduceTips } from './reducetips';
+import { ReduceWaste } from './reducewaste';
+import { Tools } from './tools';
 
 export const ConfigureStore = () => {
     const store = createStore(
-        Reducer,
-        initialState
+        combineReducers({
+            collab: Collab,
+            comments: Comments,
+            home: Home, 
+            inform: Inform,
+            products: ReduceProducts,
+            tips: ReduceTips,
+            waste: ReduceWaste, 
+            tools: Tools
+        }),
+        applyMiddleware(thunk, logger)
     );
 
     return store;

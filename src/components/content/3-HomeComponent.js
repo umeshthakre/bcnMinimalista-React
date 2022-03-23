@@ -2,9 +2,25 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/3-HomeComponent.css";
+import { Loading } from "./LoadingComponent";
 
-
-function RenderHomeCards({ cardList }) {
+function RenderHomeCards({ cardList, isLoading, errMess }) {
+  if (isLoading) {
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  }
+  if (errMess) {
+    return (
+      <div className="container">
+        <div className="row">{errMess}</div>
+      </div>
+    );
+  }
   return cardList.map((card) => {
     return (
       <div key={card.id} className="">
@@ -23,19 +39,22 @@ function RenderHomeCards({ cardList }) {
   });
 }
 
-class Home extends  Component  {
+class Home extends Component {
   constructor(props) {
     super(props);
-    this.state={isModalOpen: false};
+    this.state = { isModalOpen: false };
   }
   render() {
     return (
       <Container fluid>
-        <RenderHomeCards cardList={this.props.home} />
+        <RenderHomeCards
+          cardList={this.props.homeList}
+          isLoading={this.props.homeLoading}
+          errMess={this.props.homeErrMess}
+        />
       </Container>
     );
   }
 }
-
 
 export default Home;
