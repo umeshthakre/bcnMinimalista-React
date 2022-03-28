@@ -17,67 +17,86 @@ function RenderTechList({ techList }) {
   });
 }
 
-const TechForm = () => {
-  return (
-    <LocalForm
-      id="myForm__tech"
-      onSubmit={(values) => this.handleSubmit(values)}
-    >
-      <Row className="form-group">
-        <Label htmlFor="firstName" md={2}></Label>
-        <Col md={10}>
-          <Control.text
-            model=".kiloters"
-            id="kilometers"
-            name="firstName"
-            placeholder="Kilometers driven per week"
-            className="form-control"
-          />
-        </Col>
-      </Row>
-      <Row className="form-group">
-        <Label htmlFor="fastFashion" md={2}></Label>
-        <Col md={10}>
-          <Control.text
-            model=".fast"
-            id="fastFashion"
-            name="fastFashion"
-            placeholder="Fast fashion items purchased per year"
-            className="form-control"
-          />
-        </Col>
-      </Row>
-      <Row className="form-group">
-        <Label htmlFor="flightHours" md={2}></Label>
-        <Col md={10}>
-          <Control.text
-            model=".flight"
-            id="flightHours"
-            name="flightHours"
-            placeholder="Flight hours over a year"
-            className="form-control"
-          />
-        </Col>
-      </Row>
-      <Row className="form-group">
-        <Label htmlFor="meat" md={2}></Label>
-        <Col md={10}>
-          <Control.text
-            model=".meat"
-            id="meat"
-            name="meat"
-            placeholder="Servings of meat consumed per week"
-            className="form-control"
-          />
-        </Col>
-      </Row>
-      <Row className="button-group">
-        <Button>Check Footprint</Button>
-        <Button>Clear</Button>
-      </Row>
-    </LocalForm>
-  );
-};
+class TechForm extends Component {
+  // const kiloValue = this.values.kilometers * 1.2;
+  // const fastValue = this.values.fast * 100.96;
+  // const flightValue = this.values.flight * 24;
+  // const meatValue = this.values.meat * 125;
+  // const total = kiloValue + fastValue + flightValue + meatValue;
+
+  handleSubmit(values) {
+    // console.log("Current state is: " + JSON.stringify(values));
+    // alert("Current state is: " + JSON.stringify(values));
+    const kiloValue = values.kilometers * 1.2;
+    const fastValue = values.fast * 100.96;
+    const flightValue = values.flight * 24;
+    const meatValue = values.meat * 125;
+    const total = kiloValue + fastValue + flightValue + meatValue;
+    console.log(total.value)
+    alert(+total)
+  }
+  render() {
+    return (
+      <LocalForm
+        id="myForm__tech"
+        onSubmit={(values) => this.handleSubmit(values)}
+      >
+        <Row className="form-group">
+          <Label htmlFor="firstName" md={2}></Label>
+          <Col md={10}>
+            <Control.text
+              model=".kiloters"
+              id="kilometers"
+              name="firstName"
+              placeholder="Kilometers driven per week"
+              className="form-control"
+            />
+          </Col>
+        </Row>
+        <Row className="form-group">
+          <Label htmlFor="fastFashion" md={2}></Label>
+          <Col md={10}>
+            <Control.text
+              model=".fast"
+              id="fastFashion"
+              name="fastFashion"
+              placeholder="Fast fashion items purchased per year"
+              className="form-control"
+            />
+          </Col>
+        </Row>
+        <Row className="form-group">
+          <Label htmlFor="flightHours" md={2}></Label>
+          <Col md={10}>
+            <Control.text
+              model=".flight"
+              id="flightHours"
+              name="flightHours"
+              placeholder="Flight hours over a year"
+              className="form-control"
+            />
+          </Col>
+        </Row>
+        <Row className="form-group">
+          <Label htmlFor="meat" md={2}></Label>
+          <Col md={10}>
+            <Control.text
+              model=".meat"
+              id="meat"
+              name="meat"
+              placeholder="Servings of meat consumed per week"
+              className="form-control"
+            />
+          </Col>
+        </Row>
+        <Row className="button-group">
+          <Button>Check Footprint</Button>
+          <Button>Clear</Button>
+        </Row>
+      </LocalForm>
+    );
+  }
+}
 
 class Tech extends Component {
   constructor(props) {

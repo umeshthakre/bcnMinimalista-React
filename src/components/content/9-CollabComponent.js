@@ -17,10 +17,19 @@ function RenderCollabList({ collabList }) {
   });
 }
 
+
+
 class Collab extends Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   ...createForms({
+    //     feedbackCollab: InitialCollab,
+    //   }),
+    // };
   }
+
+
 
   handleSubmit(values) {
     console.log("Current state is: " + JSON.stringify(values));
@@ -28,6 +37,17 @@ class Collab extends Component {
     this.props.resetCollabForm();
   }
   render() {
+    // const InitialCollab = {
+    //   name: '',
+    //   phone: '',
+    //   email: '',
+    //   message: '',
+    // };
+
+    // const colllabReducer = modelReducer('collab', initialCollab);
+
+    // const resetState = counterReducer(nextState,
+    //   actions.reset('collab'));
     return (
       <React.Fragment>
         <Container>
@@ -42,7 +62,7 @@ class Collab extends Component {
               <h4>We'd love to hear from you!</h4>
             </Col>
           </Row>
-          <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+          <LocalForm onSubmit={(values) => this.handleSubmit(values)} model="feedbackCollab">
             <div className="form-group">
               <Label htmlFor="name">Name</Label>
               <Control.text

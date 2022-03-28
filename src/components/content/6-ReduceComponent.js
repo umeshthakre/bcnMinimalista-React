@@ -94,6 +94,7 @@ class Reduce extends Component {
               Suggest any additions to this page!
             </Button>
           </Row>
+
           <Row>
             <Col>
               <h3>Goods the encourage longevity</h3>

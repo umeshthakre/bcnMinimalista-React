@@ -1,5 +1,4 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createForms } from 'react-redux-form';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { Collab } from './collab';
@@ -11,6 +10,7 @@ import { ReduceTips } from './reducetips';
 import { ReduceWaste } from './reducewaste';
 import { Tools } from './tools';
 import { InitialCollab } from './forms';
+import { createForms } from 'react-redux-form';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -24,7 +24,7 @@ export const ConfigureStore = () => {
             waste: ReduceWaste, 
             tools: Tools,
             ...createForms({
-                feedbackCollab: InitialCollab
+                collabForm: InitialCollab
             })
         }),
         applyMiddleware(thunk, logger)

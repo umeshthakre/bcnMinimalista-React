@@ -45,6 +45,12 @@
   color: purple;
 }
 
+.modal-button {
+  max-height: 40px;
+margin-top: auto;
+margin-bottom: auto;
+}
+
 @media only screen and (max-width: 415px) {
   .waste-title {
     font-size: 80%;
