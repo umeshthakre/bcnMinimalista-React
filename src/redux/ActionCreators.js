@@ -13,12 +13,16 @@ export const addComment = (id, name, forum, message, date) =>({
     }
 })
 
+// export const fetchInform = () => dispatch => {
+//     dispatch(informLoading());
+//     setTimeout(() => {
+//         dispatch(addInform(INFORM))
+//     }, 0)
+// }
 export const fetchInform = () => dispatch => {
-    dispatch(informLoading());
-    setTimeout(() => {
-        dispatch(addInform(INFORM))
-    }, 2000)
+    dispatch(addInform(INFORM));
 }
+
 
 export const informLoading = () => ({
     type: ActionTypes.INFORM_LOADING

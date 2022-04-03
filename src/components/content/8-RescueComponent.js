@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import "../styles/8-RescueComponent.css";
 import { FadeTransform } from "react-animation-components";
+import Footer from './10-FooterComponent';
 
 const Rescue = () => {
   return (
@@ -98,6 +99,7 @@ const Rescue = () => {
           </Row>
         </FadeTransform>
       </Container>
+      <Footer/>
     </React.Fragment>
   );
 };

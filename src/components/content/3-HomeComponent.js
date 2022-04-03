@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "../styles/3-HomeComponent.css";
 import { Loading } from "./13-LoadingComponent";
 import { Fade, Stagger } from "react-animation-components";
 
-function RenderHomeCards({ cardList, isLoading, errMess }) {
+
+const RenderHomeCards = ({ cardList, isLoading, errMess }) => {
   if (isLoading) {
     return (
       <div className="container">
@@ -50,22 +51,16 @@ function RenderHomeCards({ cardList, isLoading, errMess }) {
   );
 }
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isModalOpen: false };
-  }
-  render() {
-    return (
-      <Container fluid>
-        <RenderHomeCards
-          cardList={this.props.homeList}
-          isLoading={this.props.homeLoading}
-          errMess={this.props.homeErrMess}
-        />
-      </Container>
-    );
-  }
-}
+const Home = (props) => {
+  return (
+    <Container fluid>
+      <RenderHomeCards
+        cardList={props.homeList}
+        isLoading={props.homeLoading}
+        errMess={props.homeErrMess}
+      />
+    </Container>
+  );
+};
 
 export default Home;

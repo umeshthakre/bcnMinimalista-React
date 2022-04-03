@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Row, Col, Button, Label } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/7-TechComponent.css";
+import Footer from './10-FooterComponent';
 
-function RenderTechList({ techList }) {
+const RenderTechList = ({ techList }) => {
   return techList.map((tools) => {
     return (
       <div key={tools.id} className="col-md-5 m-1">
@@ -17,25 +18,17 @@ function RenderTechList({ techList }) {
   });
 }
 
-class TechForm extends Component {
-  // const kiloValue = this.values.kilometers * 1.2;
-  // const fastValue = this.values.fast * 100.96;
-  // const flightValue = this.values.flight * 24;
-  // const meatValue = this.values.meat * 125;
-  // const total = kiloValue + fastValue + flightValue + meatValue;
-
-  handleSubmit(values) {
-    // console.log("Current state is: " + JSON.stringify(values));
-    // alert("Current state is: " + JSON.stringify(values));
-    const kiloValue = values.kilometers * 1.2;
-    const fastValue = values.fast * 100.96;
-    const flightValue = values.flight * 24;
-    const meatValue = values.meat * 125;
-    const total = kiloValue + fastValue + flightValue + meatValue;
-    console.log(total.value)
-    alert(+total)
-  }
-  render() {
+const TechForm = () => {
+  // handleSubmit(values) {
+  //   console.log(values)
+  //   const kiloValue = values.kilometers * 1.2;
+  //   const fastValue = values.fast * 100.96;
+  //   const flightValue = values.flight * 24;
+  //   const meatValue = values.meat * 125;
+  //   const total = kiloValue + fastValue + flightValue + meatValue;
+  //   console.log(total)
+  //   alert(total)
+  // }
     return (
       <LocalForm
         id="myForm__tech"
@@ -45,7 +38,7 @@ class TechForm extends Component {
           <Label htmlFor="firstName" md={2}></Label>
           <Col md={10}>
             <Control.text
-              model=".kiloters"
+              model=".kilometers"
               id="kilometers"
               name="firstName"
               placeholder="Kilometers driven per week"
@@ -95,14 +88,9 @@ class TechForm extends Component {
         </Row>
       </LocalForm>
     );
-  }
 }
 
-class Tech extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+const Tech = (props) => {
     return (
       <React.Fragment>
         <Container>
@@ -124,13 +112,13 @@ class Tech extends Component {
           <TechForm />
           <Row>
             <div className="flex flex-row flex-wrap h-100">
-              <RenderTechList techList={this.props.tools} />
+              <RenderTechList techList={props.tools} />
             </div>
           </Row>
         </Container>
+        <Footer/>
       </React.Fragment>
     );
-  }
 }
 
 export default Tech;

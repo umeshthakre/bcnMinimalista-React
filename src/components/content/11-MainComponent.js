@@ -6,9 +6,8 @@ import Reduce from "./6-ReduceComponent";
 import Tech from "./7-TechComponent";
 import Rescue from "./8-RescueComponent";
 import Collab from "./9-CollabComponent";
-import Footer from "./10-FooterComponent";
 import Jumbo from "./1-JumbotronComponent";
-import NavComp from "./2-NavBarComponent";
+import NavBar from "./2-NavBarComponent";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { actions } from "react-redux-form";
@@ -33,7 +32,7 @@ const mapDispatchToProps = {
     addComment(id, name, forum, message, date),
   fetchInform: () => fetchInform(),
   fetchHome: () => fetchHome(),
-  resetCollabForm: () => actions.reset("feedbackCollab"),
+  resetCollabForm: () => actions.reset("collabForm"),
 };
 
 class Main extends Component {
@@ -46,8 +45,24 @@ class Main extends Component {
       <div>
         <Jumbo />
         <TransitionGroup>
-          <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+          <CSSTransition
+            key={this.props.location.key}
+            classNames="page"
+            timeout={300}
+          >
             <Switch>
+              <Route
+                exact
+                path="/"
+                default
+                render={() => (
+                  <Home
+                    homeList={this.props.home.home}
+                    homeLoading={this.props.home.isLoading}
+                    homeErrMess={this.props.home.errMess}
+                  />
+                )}
+              />
               <Route
                 path="/home"
                 default
@@ -60,7 +75,7 @@ class Main extends Component {
                 )}
               />
               <div>
-                <NavComp />
+                <NavBar />
                 <Route
                   path="/inform"
                   render={() => (
@@ -108,7 +123,6 @@ class Main extends Component {
             </Switch>
           </CSSTransition>
         </TransitionGroup>
-        <Footer />
       </div>
     );
   }

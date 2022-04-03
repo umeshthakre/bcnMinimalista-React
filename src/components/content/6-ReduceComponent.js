@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Container,
   Row,
@@ -11,128 +11,96 @@ import {
   CardTitle,
 } from "reactstrap";
 import "../styles/6-ReduceComponent.css";
+import Footer from "./10-FooterComponent";
 
-function RenderProductList({ productsList }) {
+const RenderProductList = ({ productsList }) => {
   return productsList.map((product) => {
     return (
-      <div key={product.id} className="col-md-5 m-1">
-        <Card className="card">
+      <div key={product.id}>
+        <Card>
           <a href={product.site} target="_blank" rel="noreferrer">
-            <CardImg
-              alt="alt"
-              src={product.src}
-              left
-              width="10%"
-              className="card-img"
-            />
+            <CardImg alt="alt" src={product.src} left width="10%" />
 
-            <CardBody className="card-body">
-              <CardTitle tag="h5" className="card-title">
-                {product.title}
-              </CardTitle>
-              <CardText className="card-text">{product.price}</CardText>
+            <CardBody>
+              <CardTitle tag="h5">{product.title}</CardTitle>
+              <CardText>{product.price}</CardText>
             </CardBody>
           </a>
         </Card>
       </div>
     );
   });
-}
-function RenderWasteList({ wasteList }) {
+};
+const RenderWasteList = ({ wasteList }) => {
   return wasteList.map((waste) => {
     return (
-      <div key={waste.id} className="col-md-5 m-1">
+      <div key={waste.id}>
         <Card>
           <a href={waste.site} target="_blank" rel="noreferrer">
-            <CardBody className="card-body text-only">
-              <CardTitle tag="h5" className="card-title waste-title">
-                {waste.title}
-              </CardTitle>
-              <CardText className="card-text">{waste.subtitle}</CardText>
+            <CardBody>
+              <CardTitle tag="h5">{waste.title}</CardTitle>
+              <CardText>{waste.subtitle}</CardText>
             </CardBody>
           </a>
         </Card>
       </div>
     );
   });
-}
+};
 
-function RenderTipsList({ tipsList }) {
+const RenderTipsList = ({ tipsList }) => {
   return tipsList.map((tip) => {
     return (
-      <div key={tip.id} className="col-md-5 m-1">
+      <div key={tip.id}>
         <Card>
-          <CardBody className="card-body text-only">
-            <CardTitle tag="h5" className="card-title waste-title">
-              {tip.title}
-            </CardTitle>
+          <CardBody>
+            <CardTitle tag="h5">{tip.title}</CardTitle>
           </CardBody>
         </Card>
       </div>
     );
   });
-}
+};
 
-class Reduce extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <React.Fragment>
-        <Container>
-          <Row>
-            <Col>
-              <p className="page-title">minimize carbon output and waste</p>
-            </Col>
-            <Button
-              className="modal-button"
-              color="success"
-              outline
-              id="suggestButton"
-            >
-              Suggest any additions to this page!
-            </Button>
-          </Row>
-
-          <Row>
-            <Col>
-              <h3>Goods the encourage longevity</h3>
-            </Col>
-          </Row>
-          <RenderProductList productsList={this.props.products} />
-          <Row>
-            <Col>
-              <h3>Waste and Recycling Services</h3>
-            </Col>
-          </Row>
-          <RenderWasteList wasteList={this.props.waste} />
-          <Row>
-            <Col>
-              <h3>Tips and Tricks</h3>
-            </Col>
-          </Row>
-          <RenderTipsList tipsList={this.props.tips} />
-        </Container>
-      </React.Fragment>
-    );
-  }
-}
+const Reduce = (props) => {
+  return (
+    <React.Fragment>
+      <Container>
+        <Row>
+          <Col>
+            <p className="page-title">minimize carbon output and waste</p>
+          </Col>
+          <Button
+            className="modal-button"
+            color="success"
+            outline
+            id="suggestButton"
+          >
+            Suggest any additions to this page!
+          </Button>
+        </Row>
+        <Row>
+          <Col>
+            <h3>Goods the encourage longevity</h3>
+          </Col>
+        </Row>
+        <RenderProductList productsList={props.products} />
+        <Row>
+          <Col>
+            <h3>Waste and Recycling Services</h3>
+          </Col>
+        </Row>
+        <RenderWasteList wasteList={props.waste} />
+        <Row>
+          <Col>
+            <h3>Tips and Tricks</h3>
+          </Col>
+        </Row>
+        <RenderTipsList tipsList={props.tips} />
+      </Container>
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 export default Reduce;
-
-//button in case used for later
-
-/* <Row>
-<Col>
-  <h3>Tips and Tricks</h3>
-</Col>
-<Button
-  className="modal-button"
-  color="success"
-  outline
-  id="suggestButton"
->
-  Make a Suggestion
-</Button>
-</Row> */

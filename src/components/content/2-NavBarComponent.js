@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/2-NavBarComponent.css";
 
-class NavComp extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
     //binds the function to component, when togglenav is called the this keyword will refer corectly to component
@@ -71,4 +71,4 @@ class NavComp extends Component {
   }
 }
 
-export default NavComp;
+export default NavBar;

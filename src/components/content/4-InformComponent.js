@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Container,
   Row,
@@ -10,38 +10,21 @@ import {
   Label,
 } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/4-InformComponent.css";
-import { Loading } from "./13-LoadingComponent";
+import Footer from './10-FooterComponent';
 
-function RenderInformList({ informList, isLoading, errMess }) {
-  if (isLoading) {
-    return (
-      <div className="container">
-        <div className="row">
-          <Loading />
-        </div>
-      </div>
-    );
-  }
-  if (errMess) {
-    return (
-      <div className="container">
-        <div className="row">{errMess}</div>
-      </div>
-    );
-  }
+function RenderInformList({ informList }) {
   return informList.map((inform) => {
     return (
-      <div key={inform.id} className="col-md-5 m-1">
-        <Row className="snippet-row">
+      <div key={inform.id} className="">
+        <Row className="">
           <Col>
             <img src={inform.img} className="img-fluid" alt={inform.alt} />
           </Col>
           <Col className="snippet">
             <a href={inform.src} target="_blank" rel="noreferrer">
-              <p className="snippet-header text-responsive">{inform.title}</p>
-              <p className="snippet-body text-responsive">{inform.caption}</p>
+              <p className="">{inform.title}</p>
+              <p className="">{inform.caption}</p>
             </a>
           </Col>
         </Row>
@@ -50,52 +33,51 @@ function RenderInformList({ informList, isLoading, errMess }) {
   });
 }
 
-class Inform extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isModalOpen: false };
-    this.toggleModal = this.toggleModal.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const Inform = (props) => {
 
-  toggleModal() {
-    this.setState({
-      isModalOpen: !this.state.isModalOpen,
-    });
-  }
+    // this.toggleModal = this.toggleModal.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  
+// const [modalState, setModalState] = useState(isModalOpen)
+  
+// toggleModal() {
+//     this.setState({
+//       isModalOpen: !this.state.isModalOpen,
+//     });
+//   }
 
-  handleSubmit(values) {
-    this.toggleModal();
-    alert("suggestion submitted: " + JSON.stringify(values));
-  }
+  // handleSubmit(values) {
+  //   this.toggleModal();
+  //   alert("suggestion submitted: " + JSON.stringify(values));
+  // }
 
-  render() {
+
     return (
       <React.Fragment>
         <Container>
           <Row>
-            <Col sm="9" xs="5">
+            <Col>
               <p className="page-title">news in local waste reduction</p>
             </Col>
-            <Col sm="3" xs="5">
+            
               <Button
                 className="modal-button"
                 color="success"
                 outline
                 id="suggestButton"
-                onClick={this.toggleModal}
+                // onClick={this.toggleModal}
               >
                 Suggest article
               </Button>
-            </Col>
+          
           </Row>
           <RenderInformList
-            informList={this.props.informList}
-            isLoading={this.props.informLoading}
-            errMess={this.props.informErrMess}
+            informList={props.informList}
           />
+          <Footer/>
         </Container>
-        <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+        {/* <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}> */}
+        <Modal>
           <ModalHeader>share your thoughts</ModalHeader>
           <ModalBody>
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
@@ -123,7 +105,6 @@ class Inform extends Component {
         </Modal>
       </React.Fragment>
     );
-  }
 }
 
 export default Inform;

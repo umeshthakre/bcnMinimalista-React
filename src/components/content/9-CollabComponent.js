@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Container, Row, Col, Label, Button } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/9-CollabComponent.css";
+import Footer from './10-FooterComponent';
 
 function RenderCollabList({ collabList }) {
   return collabList.map((collab) => {
@@ -17,37 +18,15 @@ function RenderCollabList({ collabList }) {
   });
 }
 
+const Collab = (props) => {
+  //   this.handleSubmit = this.handleSubmit.bind(this);
+  
 
+  // handleSubmit(values) {
+  //   console.log("Current state is: " + JSON.stringify(values));
+  //   alert("Current state is: " + JSON.stringify(values));
+  //   this.props.resetCollabForm();
 
-class Collab extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   ...createForms({
-    //     feedbackCollab: InitialCollab,
-    //   }),
-    // };
-  }
-
-
-
-  handleSubmit(values) {
-    console.log("Current state is: " + JSON.stringify(values));
-    alert("Current state is: " + JSON.stringify(values));
-    this.props.resetCollabForm();
-  }
-  render() {
-    // const InitialCollab = {
-    //   name: '',
-    //   phone: '',
-    //   email: '',
-    //   message: '',
-    // };
-
-    // const colllabReducer = modelReducer('collab', initialCollab);
-
-    // const resetState = counterReducer(nextState,
-    //   actions.reset('collab'));
     return (
       <React.Fragment>
         <Container>
@@ -62,7 +41,10 @@ class Collab extends Component {
               <h4>We'd love to hear from you!</h4>
             </Col>
           </Row>
-          <LocalForm onSubmit={(values) => this.handleSubmit(values)} model="feedbackCollab">
+          <LocalForm
+            onSubmit={(values) => this.handleSubmit(values)}
+            model="collabForm"
+          >
             <div className="form-group">
               <Label htmlFor="name">Name</Label>
               <Control.text
@@ -73,7 +55,7 @@ class Collab extends Component {
               />
             </div>
             <div className="form-group">
-              <Label htmlFor="email">Phone</Label>
+              <Label htmlFor="phone">Phone</Label>
               <Control.text
                 model=".phone"
                 id="phone"
@@ -82,7 +64,7 @@ class Collab extends Component {
               />
             </div>
             <div className="form-group">
-              <Label htmlFor="name">Email</Label>
+              <Label htmlFor="email">Email</Label>
               <Control.text
                 model=".email"
                 id="email"
@@ -109,14 +91,15 @@ class Collab extends Component {
             </Row>
             <Row>
               <div className="flex flex-row flex-wrap h-100 flex-collab">
-                <RenderCollabList collabList={this.props.collab} />
+                <RenderCollabList collabList={props.collab} />
               </div>
             </Row>
           </LocalForm>
         </Container>
+        <Footer/>
       </React.Fragment>
     );
-  }
+  
 }
 
 export default Collab;
