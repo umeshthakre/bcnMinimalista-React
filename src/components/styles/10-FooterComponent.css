@@ -18,3 +18,8 @@
   padding: 0;
   text-align: center;
 }
+
+.btn-size {
+  font-size: 30px;
+  width: 100px;
+}
