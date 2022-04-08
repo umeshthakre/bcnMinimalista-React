@@ -2,26 +2,26 @@ import * as ActionTypes from './ActionTypes';
 import { INFORM } from "../shared/inform";
 import { HOME } from "../shared/home";
 
-// export const addComment = (id, name, forum, message, date) =>({
-//     type: ActionTypes.ADD_COMMENT,
-//     payload: {
-//         id: id, 
-//         name: name,
-//         forum: forum, 
-//         message: message, 
-//         date: date
-//     }
-// })
+export const addComment = (id, name, forum, message, date) =>({
+    type: ActionTypes.ADD_COMMENT,
+    payload: {
+        id: id, 
+        name: name,
+        forum: forum, 
+        message: message, 
+        date: date
+    }
+})
 
-// export const fetchInform = () => dispatch => {
-//     dispatch(informLoading());
-//     setTimeout(() => {
-//         dispatch(addInform(INFORM))
-//     }, 0)
-// }
 export const fetchInform = () => dispatch => {
-    dispatch(addInform(INFORM));
+    dispatch(informLoading());
+    setTimeout(() => {
+        dispatch(addInform(INFORM))
+    }, 0)
 }
+// export const fetchInform = () => dispatch => {
+//     dispatch(addInform(INFORM));
+// }
 
 
 export const informLoading = () => ({

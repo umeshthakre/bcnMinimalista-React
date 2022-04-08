@@ -16,7 +16,7 @@ export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
             collab: Collab,
-            // comments: Comments,
+            comments: Comments,
             home: Home, 
             inform: Inform,
             products: ReduceProducts,

@@ -49,15 +49,17 @@ const CommentForm = (props) => {
   const messageChangeHandler = (event) => {
     setEnteredMessage(event.target.value);
   };
+  // props.addComment(22,event.target.rating.value,event.target.forum.value,event.target.message.value,"date");
+  const addCommentHandler = (values) => {
+    console.log(values);
 
-  const addCommentHandler = event => {
-    event.preventDefault();
-    props.onAddComment(enteredForum, enteredName, enteredMessage)
-    setEnteredForum("All")
-    setEnteredName("")
-    setEnteredMessage("")
-  }
-
+    props.addComment(" ", values.name, values.forum, values.message, "date");
+    // event.preventDefault();
+    // props.onAddComment(enteredForum, enteredName, enteredMessage)
+    // setEnteredForum("All")
+    // setEnteredName("")
+    // setEnteredMessage("")
+  };
 
   return (
     <React.Fragment>
@@ -130,9 +132,9 @@ const Connect = (props) => {
             <p className="page-title">chat with your community</p>
           </Col>
         </Row>
-        <CommentForm onAddComment={addCommentHandler} />
+        <CommentForm comments={props.comments} addComment={props.addComment}/>
         {/* <RenderComments comments={props.comments}/> */}
-        <RenderComments comments={comments} />
+        <RenderComments comments={props.comments} />
       </Container>
       <Footer />
     </React.Fragment>

@@ -1,4 +1,4 @@
-// export const ADD_COMMENT = "ADD_COMMENT";
+export const ADD_COMMENT = "ADD_COMMENT";
 
 export const HOME_LOADING = "HOME_LOADING";
 export const HOME_FAILED = "HOME_FAILED";

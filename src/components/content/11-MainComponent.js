@@ -23,19 +23,22 @@ const mapStateToProps = (state) => {
     tips: state.tips,
     tools: state.tools,
     collab: state.collab,
-    // comments: state.comments,
+    comments: state.comments,
   };
 };
 
 const mapDispatchToProps = {
-  // addComment: (id, name, forum, message, date) =>
-  //   addComment(id, name, forum, message, date),
+  addComment: (id, name, forum, message, date) =>
+    addComment(id, name, forum, message, date),
   fetchInform: () => fetchInform(),
   fetchHome: () => fetchHome(),
   resetCollabForm: () => actions.reset("collabForm"),
 };
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     this.props.fetchInform();
     this.props.fetchHome();

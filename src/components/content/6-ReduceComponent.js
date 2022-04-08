@@ -17,13 +17,13 @@ const RenderProductList = ({ productsList }) => {
   return productsList.map((product) => {
     return (
       <div key={product.id}>
-        <Card>
+        <Card className="product-card">
           <a href={product.site} target="_blank" rel="noreferrer">
-            <CardImg alt="alt" src={product.src} left width="10%" />
+            <CardImg alt="alt" src={product.src} left width="10%" className="product-img" />
 
-            <CardBody>
-              <CardTitle tag="h5">{product.title}</CardTitle>
-              <CardText>{product.price}</CardText>
+            <CardBody className="product-body">
+              <CardTitle tag="h5" className="product-body-title">{product.title} </CardTitle>
+              <CardText className="product-body-text">{product.price}</CardText>
             </CardBody>
           </a>
         </Card>
@@ -84,7 +84,7 @@ const Reduce = (props) => {
             <h3>Goods the encourage longevity</h3>
           </Col>
         </Row>
-        <RenderProductList productsList={props.products} />
+        <RenderProductList className="product-list" productsList={props.products} />
         <Row>
           <Col>
             <h3>Waste and Recycling Services</h3>

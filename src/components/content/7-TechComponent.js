@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Label, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Container, Row, Col, Button, Form, Label, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { Control, LocalForm } from "react-redux-form";
 import "../styles/7-TechComponent.css";
 import TechModal from './7-TechModal';
@@ -37,8 +37,8 @@ const {toggleModal, isModalVisible} = useModal
   return (
     <React.Fragment>
       <TechModal isModalVisible={isModalVisible} toggleModal={toggleModal}/>
-      <LocalForm
-        id="myForm__tech"
+      <Form
+        id="myForm__tech" onSubmit={toggleModal}
       >
         <Row className="form-group">
           <Label htmlFor="firstName" md={2}></Label>
@@ -89,11 +89,10 @@ const {toggleModal, isModalVisible} = useModal
           </Col>
         </Row>
         <Row className="button-group">
-          <Button onClick={toggleModal}>Check Footprint</Button>
+          <Button>Check Footprint</Button>
           <Button>Clear</Button>
         </Row>
-      </LocalForm>
-
+      </Form>
     </React.Fragment>
   );
 };

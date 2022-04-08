@@ -7,10 +7,14 @@
   padding-top: 10px;
   width: 100%;
   justify-content: space-between;
+  flex-wrap: nowrap;
+
 }
 
 .footer-container {
   width: 100%;
+
+  
 }
 
 .footer-icon {
@@ -20,6 +24,6 @@
 }
 
 .btn-size {
-  font-size: 30px;
+  font-size: 20px;
   width: 100px;
 }

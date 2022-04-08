@@ -18,22 +18,22 @@ const Footer = () => {
           </Col>
           <Col className="footer-icon">
             <a href="http://facebook.com/" target="_blank" rel="noreferrer"
-              className="btn btn-social-icon"
+              className="btn btn-social-icon btn-size"
             >
               <i className="fa fa-facebook fa-3x"></i>
             </a>
           </Col>
           <Col className="footer-icon">
             <a href="http://twitter.com/" target="_blank" rel="noreferrer"
-              className="btn btn-social-icon"
+              className="btn btn-social-icon btn-size"
             >
               <i className="fa fa-twitter fa-3x"></i>
             </a>
           </Col>
           <Col className="footer-icon">
             <a
-              className="btn btn-social-icon"
-              href="http://youtube.com/" target="_blank" rel="noreferrer"
+              className="btn btn-social-icon btn-size"
+              href="http://youtube.com/" target="_blank" rel="noreferrer" 
             >
               <i className="fa fa-envelope fa-3x"></i>
             </a>
