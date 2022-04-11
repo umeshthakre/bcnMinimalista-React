@@ -1,0 +1,23 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0.33;
+  }
+
+  .product-img {
+    display: flex;
+    max-height: 80px;
+  }
+
+  .product-body {
+    display: flex;
+  }
+
+  .product-body-title {
+    display: flex;
+  }
+  
+  .product-body-text {
+    display: flex;
+  }
+  

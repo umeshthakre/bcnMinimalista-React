@@ -1,0 +1,29 @@
+.snippet {
+  padding: 0;
+}
+
+.snippet-header {
+  font-size: 160%;
+  position: relative;
+}
+.snippet-row {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid black;
+}
+
+.card-img {
+  max-height: 120px;
+}
+.snippet-body {
+  font-size: 110%;
+  padding: 0px;
+}
+
+@media (min-width: 768px) {
+  .snippet {
+    max-width: 41.666667%;
+  }
+}

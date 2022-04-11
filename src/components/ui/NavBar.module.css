@@ -1,0 +1,22 @@
+.navbar {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0px;
+  border-bottom: 2px solid black;
+  justify-content: space-evenly;
+}
+
+.navitem {
+  color: black;
+  background-color: white;
+  justify-content: space-evenly;
+}
+
+.navtoggler {
+  border: 1px solid black;
+}
+
+.me-2{
+  float: right;
+  margin-left: auto;
+}
