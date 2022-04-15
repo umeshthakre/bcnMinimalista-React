@@ -3,20 +3,28 @@ import { Container, Row, Col } from "reactstrap";
 import Footer from "../../ui/Footer";
 import ConnectComments from './ConnectComments';
 import ConnectForm from './ConnectForm';
+import ForumOptions from './ConnectForum'
 
+const Connect = ({comments, addComment}) => {
 
+  const allForum = [
+    "all",
+    ...new Set(comments.map((comment) => comment.forum)),
+  ];
+  console.log(allForum)
 
-const Connect = (props) => {
-  const [comments, setNewComment] = useState([]);
+  const [comment, setComment] = useState(comments);
+  const [forum, setForum] = useState(allForum);
 
-  const addCommentHandler = (uForum, uName, uMessage) => {
-    setNewComment((prevCommentList) => {
-      return [
-        ...prevCommentList,
-        { forum: uForum, name: uName, message: uMessage },
-      ];
-    });
+  const filterItems = (forum) => {
+    if (forum === "all") {
+      setComment(comments);
+      return;
+    }
+    const filteredComments = comments.filter((comment) => comment.forum === forum);
+    setComment(filteredComments);
   };
+
   return (
     <React.Fragment>
       <Container>
@@ -26,9 +34,10 @@ const Connect = (props) => {
             <p className="page-title">chat with your community</p>
           </Col>
         </Row>
-        <ConnectForm comments={props.comments} addComment={props.addComment}/>
+        <ForumOptions forum={forum} filterItems={filterItems}/>
+        <ConnectForm comments={comments} addComment={addComment}/>
         {/* <RenderComments comments={props.comments}/> */}
-        <ConnectComments comments={props.comments} />
+        <ConnectComments comments={comment} />
       </Container>
       <Footer />
     </React.Fragment>

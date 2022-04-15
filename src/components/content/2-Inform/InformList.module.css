@@ -1,11 +1,3 @@
-.snippet {
-  padding: 0;
-}
-
-.snippet-header {
-  font-size: 160%;
-  position: relative;
-}
 .snippet-row {
   padding-bottom: 20px;
   padding-top: 20px;
@@ -15,11 +7,21 @@
 }
 
 .card-img {
-  max-height: 120px;
+  max-height: 100%;
 }
+
 .snippet-body {
   font-size: 110%;
   padding: 0px;
+}
+
+.snippet-header {
+  font-size: 160%;
+  position: relative;
+}
+
+.snippet-caption {
+  font-size: 110%;
 }
 
 @media (min-width: 768px) {

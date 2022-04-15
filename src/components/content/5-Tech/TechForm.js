@@ -1,24 +1,25 @@
-import React from 'react';
+import React from "react";
 import { Row, Col, Button, Form, Label } from "reactstrap";
 import { Control } from "react-redux-form";
-import styles from './TechForm.module.css'
+import styles from "./TechForm.module.css";
 
 const TechForm = () => {
-  // handleSubmit(values) {
-  //   console.log(values)
-  //   const kiloValue = values.kilometers * 1.2;
-  //   const fastValue = values.fast * 100.96;
-  //   const flightValue = values.flight * 24;
-  //   const meatValue = values.meat * 125;
-  //   const total = kiloValue + fastValue + flightValue + meatValue;
-  //   console.log(total)
-  //   alert(total)
-  // }
+
+
+  const handleSubmit = (values) => {
+    const kiloValue = values.kilometers * 1.2;
+    const fastValue = values.fast * 100.96;
+    const flightValue = values.flight * 24;
+    const meatValue = values.meat * 125;
+    const total = kiloValue + fastValue + flightValue + meatValue;
+    console.log(total);
+    alert(total);
+  };
 
   return (
     <React.Fragment>
-      <Form className={styles.techForm}>
-        <Row className={styles['form-group']}>
+      <Form className={styles.techForm} onSubmit={(values=>this.handleSubmit(values))}>
+        <Row className={styles["form-group"]}>
           <Label htmlFor="firstName" md={2}></Label>
           <Col md={10}>
             <Control.text
@@ -26,11 +27,11 @@ const TechForm = () => {
               id="kilometers"
               name="firstName"
               placeholder="Kilometers driven per week"
-              className='form-control'
+              className="form-control"
             />
           </Col>
         </Row>
-        <Row  className={styles['form-group']}>
+        <Row className={styles["form-group"]}>
           <Label htmlFor="fastFashion" md={2}></Label>
           <Col md={10}>
             <Control.text
@@ -38,11 +39,11 @@ const TechForm = () => {
               id="fastFashion"
               name="fastFashion"
               placeholder="Fast fashion items purchased per year"
-              className='form-control'
+              className="form-control"
             />
           </Col>
         </Row>
-        <Row  className={styles['form-group']}>
+        <Row className={styles["form-group"]}>
           <Label htmlFor="flightHours" md={2}></Label>
           <Col md={10}>
             <Control.text
@@ -50,11 +51,11 @@ const TechForm = () => {
               id="flightHours"
               name="flightHours"
               placeholder="Flight hours over a year"
-              className='form-control'
+              className="form-control"
             />
           </Col>
         </Row>
-        <Row  className={styles['form-group']}>
+        <Row className={styles["form-group"]}>
           <Label htmlFor="meat" md={2}></Label>
           <Col md={10}>
             <Control.text
@@ -62,12 +63,12 @@ const TechForm = () => {
               id="meat"
               name="meat"
               placeholder="Servings of meat consumed per week"
-              className='form-control'
+              className="form-control"
             />
           </Col>
         </Row>
-        <Row className={styles['button-group']}>
-          <Button>Check Footprint</Button>
+        <Row className={styles["button-group"]}>
+          <Button type="submit">Check Footprint</Button>
           <Button>Clear</Button>
         </Row>
       </Form>

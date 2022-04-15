@@ -33,7 +33,8 @@ const Reduce = (props) => {
             <h3>Goods the encourage longevity</h3>
           </Col>
         </Row>
-        <ProductList className={styles['product-list']} productsList={props.products} />
+        <Row style={{flexDirection: "row"}}>
+        <ProductList productsList={props.products} /> </Row>
         <Row>
           <Col>
             <h3>Waste and Recycling Services</h3>
