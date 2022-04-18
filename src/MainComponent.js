@@ -90,7 +90,7 @@ class Main extends Component {
                     />
                   )}
                 />
-                <Route
+                {/* <Route
                   path="/connect"
                   render={() => (
                     <Connect
@@ -98,7 +98,7 @@ class Main extends Component {
                       addComment={this.props.addComment}
                     />
                   )}
-                />
+                /> */}
                 <Route
                   path="/reduce"
                   render={() => (
