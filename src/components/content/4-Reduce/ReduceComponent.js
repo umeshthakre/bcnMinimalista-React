@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import Footer from "../../ui/Footer";
 import ProductList from "./ProductList";
 import WasteList from "./WasteList";
 import TipsList from "./Tips-List";
+import ModalReduce from './ModalReduce';
+import Backdrop from './ModalBackdrop';
 import styles from "./ReduceComponent.module.css";
 
 const Reduce = (props) => {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const toggleModal = () => {
+    setModalIsOpen(true)
+  }
+
+  
   return (
     <React.Fragment>
+      {modalIsOpen && <Backdrop/>}
+     {modalIsOpen &&  <ModalReduce open={modalIsOpen}>example text</ModalReduce>}
       <Container>
         <Row>
           <Col>
@@ -19,6 +31,7 @@ const Reduce = (props) => {
             color="success"
             outline
             id="suggestButton"
+            onClick={toggleModal}
           >
             Suggest any additions to this page!
           </Button>
