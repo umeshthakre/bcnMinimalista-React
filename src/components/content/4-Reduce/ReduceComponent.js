@@ -11,6 +11,7 @@ import WasteList from './WasteList';
 import TipsList from './Tips-List';
 import styles from './ReduceComponent.module.css';
 
+
 const Reduce = (props) => {
   return (
     <React.Fragment>
@@ -33,7 +34,8 @@ const Reduce = (props) => {
             <h3>Goods the encourage longevity</h3>
           </Col>
         </Row>
-        <Row style={{flexDirection: "row"}}>
+        <Row style={{flexDirection: "row", margin: '10px', padding: '10px',   alignItems: 'center',
+  justifyContent: 'center', alignContent: 'space-evenly'}}>
         <ProductList productsList={props.products} /> </Row>
         <Row>
           <Col>

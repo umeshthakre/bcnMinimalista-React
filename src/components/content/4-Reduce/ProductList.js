@@ -6,18 +6,15 @@ const ProductList = ({ productsList }) => {
     return (
       <div className="product-card" key={product.id}>
         <a href={product.site} target="_blank" rel="noreferrer">
-        <CardImg
-    alt="alt"
-    src={product.src}
-    left
-    width="10%"
-    className={styles["product-img"]}
-  />
+          <CardImg
+            alt="alt"
+            src={product.src}
+            left
+            width="10%"
+            className={styles["product-img"]}
+          />
         </a>
-        <footer>
-          {`${product.title} - ${product.price}`}
-        </footer>
-
+        <footer className="product-body-text">{`${product.title} - ${product.price}`}</footer>
       </div>
     );
   });
@@ -25,8 +22,8 @@ const ProductList = ({ productsList }) => {
 
 export default ProductList;
 
-
-{/* <Card key={product.id} className={styles["product-card"]}>
+{
+  /* <Card key={product.id} className={styles["product-card"]}>
 <a href={product.site} target="_blank" rel="noreferrer">
   <CardImg
     alt="alt"
@@ -45,4 +42,5 @@ export default ProductList;
     </CardText>
   </CardBody>
 </a>
-</Card> */}
+</Card> */
+}
