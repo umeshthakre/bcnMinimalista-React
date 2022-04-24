@@ -26,7 +26,7 @@ const ConnectForm = (props) => {
   return (
     <React.Fragment>
       <LocalForm onSubmit={addCommentHandler}>
-        {props.currentForum}
+        Patrick {props.currentForum}
         {/* <div className="form-group">
           <Label htmlFor="forum">Forum</Label>
           <Control.select
