@@ -5,53 +5,36 @@ import ConnectComments from "./ConnectComments";
 import ConnectForm from "./ConnectForm";
 import ForumOptions from "./ConnectForum";
 
-const Connect = (props) => {
-
-  const { comments, addComment } = props;
-  const [commentsList, setCommentsList] = useState(commentsList)
-  const [forum, setForum] = useState(allForum);
-  const [enteredForum, setEnteredForum] = useState("All");
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredMessage, setEnteredMessage] = useState("");
-
-
-  //forum filtration
+const Connect = ({ comments, addComment }) => {
   const allForum = [
     "all",
     ...new Set(comments.map((comment) => comment.forum)),
   ];
   console.log(allForum);
 
+  const [comment, setComment] = useState(comments);
+  const [forum, setForum] = useState(allForum);
+  const [currentForum, setCurrentForum] = useState("all");
+
   const filterItems = (forum) => {
     if (forum === "all") {
-      setCommentsList(commentsList);
-      setForum("all")
+      setComment(comments);
       return;
     }
     const filteredComments = comments.filter(
       (comment) => comment.forum === forum
     );
-    setCommentsList(filteredComments);
+    setComment(filteredComments);
+    setCurrentForum(forum);
   };
 
-  //form state
-
-  const forumChangeHandler = (event) => {
-    setEnteredForum(enteredForum);
-  };
-
-  const nameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-  };
-
-  const messageChangeHandler = (event) => {
-    setEnteredMessage(event.target.value);
-  };
-
-  const addCommentHandler = (values) => {
-    console.log(values);
-
-    props.addComment(" ", values.name, values.forum, values.message, "date");
+  const updateCommentView = () => {
+    console.log(comments)
+    console.log(currentForum)
+    const filteredComments = comments.filter(
+      (comment) => comment.forum === currentForum
+    );
+    setComment(filteredComments);
   };
 
   return (
@@ -67,13 +50,11 @@ const Connect = (props) => {
         <ConnectForm
           comments={comments}
           addComment={addComment}
-          forumChangeHandler={forumChangeHandler}
-          nameChangehandler={nameChangeHandler}
-          messageChangeHandler={messageChangeHandler}
-          addCommentHandler={addCommentHandler}
+          currentForum={currentForum}
+          updateCommentView={updateCommentView}
         />
         {/* <RenderComments comments={props.comments}/> */}
-        <ConnectComments comments={comments} />
+        <ConnectComments comments={comment} />
       </Container>
       <Footer />
     </React.Fragment>
