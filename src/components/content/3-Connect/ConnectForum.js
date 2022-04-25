@@ -11,7 +11,7 @@ const ForumOptions = ({ forum, filterItems }) => {
             onClick={() => filterItems(forum)}
           >
             {forum}
-          </button>
+         </button>
         );
       })}
 

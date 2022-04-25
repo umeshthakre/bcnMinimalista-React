@@ -37,6 +37,7 @@ const Connect = ({ comments, addComment }) => {
     setComment(filteredComments);
   };
 
+
   return (
     <React.Fragment>
       <Container>

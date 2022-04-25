@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import Footer from "../../ui/Footer";
 import RenderInformList from "./InformList";
-import InformModal from "./InformModal";
+import Modal from "react-modal/lib/components/Modal";
+import { useFormik } from "formik";
 
 const Inform = (props) => {
+  Modal.setAppElement(document.getElementById("root"));
+  const [modalOneIsOpen, setModalOneIsOpen] = useState(false);
+  const [modalTwoIsOpen, setModalTwoIsOpen] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      article: "",
+      link: "",
+    },
+    onSubmit: (values, { resetForm }) => {
+
+      setModalTwoIsOpen(true);
+      console.log(values);
+      resetForm();
+    },
+  });
   return (
     <React.Fragment>
       <Container>
@@ -14,6 +30,7 @@ const Inform = (props) => {
           </Col>
 
           <Button
+            onClick={() => setModalOneIsOpen(true)}
             className="modal-button"
             color="success"
             outline
@@ -24,11 +41,52 @@ const Inform = (props) => {
           </Button>
         </Row>
         <RenderInformList informList={props.informList} />
+        <Modal isOpen={modalOneIsOpen}>
+          <form onSubmit={formik.handleSubmit}>
+            <label htmlFor="article">Article</label>
+            <input
+              type="text"
+              name="article"
+              value={formik.values.article}
+              onChange={formik.handleChange}
+            />
+            <label htmlFor="article">Link</label>
+            <input
+              type="text"
+              name="link"
+              value={formik.values.link}
+              onChange={formik.handleChange}
+            />
+            <button
+              onClick={() => {
+                setModalOneIsOpen(false);
+              }}
+            >
+              close
+            </button>
+            <button
+              onClick={() => {
+                setModalOneIsOpen(false);
+                setModalTwoIsOpen(true);
+              }}
+            >
+              submit
+            </button>
+          </form>
+        </Modal>
+        <Modal isOpen={modalTwoIsOpen}>
+          <div> Modal Two </div>
+          <div>Thank you for submitting {formik.values.article} and {formik.values.link} </div>
+          <button
+            onClick={() => {
+              setModalTwoIsOpen(false);
+            }}
+          >
+            close
+          </button>
+        </Modal>
         <Footer />
       </Container>
-
-      {/* <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}> */}
-      <InformModal />
     </React.Fragment>
   );
 };

@@ -1,4 +1,3 @@
-import { style } from '@mui/system';
 import { Row, Col } from 'reactstrap';
 import styles from './InformList.module.css';
 

@@ -4,23 +4,11 @@ import Footer from "../../ui/Footer";
 import ProductList from "./ProductList";
 import WasteList from "./WasteList";
 import TipsList from "./Tips-List";
-import ModalReduce from './ModalReduce';
-import Backdrop from './ModalBackdrop';
 import styles from "./ReduceComponent.module.css";
 
 const Reduce = (props) => {
-
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-
-  const toggleModal = () => {
-    setModalIsOpen(true)
-  }
-
-  
   return (
     <React.Fragment>
-      {modalIsOpen && <Backdrop/>}
-     {modalIsOpen &&  <ModalReduce open={modalIsOpen}>example text</ModalReduce>}
       <Container>
         <Row>
           <Col>
@@ -31,7 +19,6 @@ const Reduce = (props) => {
             color="success"
             outline
             id="suggestButton"
-            onClick={toggleModal}
           >
             Suggest any additions to this page!
           </Button>
@@ -58,16 +45,33 @@ const Reduce = (props) => {
             <h3>Waste and Recycling Services</h3>
           </Col>
         </Row>
-        <Row style={{flexDirection: "row", margin: '10px', padding: '10px',   alignItems: 'center',
-  justifyContent: 'center', alignContent: 'space-evenly'}}>
-        <WasteList wasteList={props.waste} /> </Row>
+        <Row
+          style={{
+            flexDirection: "row",
+            margin: "10px",
+            padding: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "space-evenly",
+          }}
+        >
+          <WasteList wasteList={props.waste} />{" "}
+        </Row>
         <Row>
           <Col>
             <h3>Tips and Tricks</h3>
           </Col>
         </Row>
-        <Row style={{flexDirection: "row", margin: '10px', padding: '10px',   alignItems: 'center',
-  justifyContent: 'center', alignContent: 'space-evenly'}}>
+        <Row
+          style={{
+            flexDirection: "row",
+            margin: "10px",
+            padding: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "space-evenly",
+          }}
+        >
           <TipsList tips={props.tips} />
         </Row>
       </Container>

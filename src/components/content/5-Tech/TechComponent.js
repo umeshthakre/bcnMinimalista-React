@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import TechModal from "./TechModal";
 import Footer from "../../ui/Footer";
 import TechForm from "./TechForm";
 import TechList from "./TechList";
@@ -24,7 +23,6 @@ const Tech = (props) => {
             gallons of water.
           </Col>
         </Row>
-        <TechModal />
         <TechForm />
         <Row>
           <TechList techTools={props.tools} />
