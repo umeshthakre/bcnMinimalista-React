@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Home from "./components/content/1-Home/HomeComponent";
-import Inform from "./components/content/2-Inform/InformComponent";
-import Connect from "./components/content/3-Connect/ConnectComponent";
-import Reduce from "./components/content/4-Reduce/ReduceComponent";
-import Tech from "./components/content/5-Tech/TechComponent";
-import Rescue from "./components/content/6-Rescue/RescueComponent";
-import Collab from "./components/content/7-Collab/CollabComponent";
+import Home from "./components/content/HomeComponent";
+import Inform from "./components/content/InformComponent";
+import Connect from "./components/content/ConnectComponent";
+import Reduce from "./components/content/ReduceComponent";
+import Tech from "./components/content/TechComponent";
+import Rescue from "./components/content/RescueComponent";
+import Collab from "./components/content/CollabComponent";
 import Jumbo from "./components/ui/Jumbotron";
 import NavBar from "./components/ui/NavBar";
 import { Switch, Route, withRouter } from "react-router-dom";

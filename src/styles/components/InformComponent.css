@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.container-inform {
+  width: 95%;
+}
+
+.inform__list-row {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid black;
+}
+
+.inform__list-img {
+  max-height: 100%;
+}
+
+.inform__list-body {
+  font-size: 110%;
+  padding: 0px;
+}
+
+.inform__list-header {
+  font-size: 160%;
+  position: relative;
+}
+
+.inform__list-caption {
+  font-size: 110%;
+}
+/*# sourceMappingURL=InformComponent.css.map */

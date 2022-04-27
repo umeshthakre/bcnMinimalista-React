@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,QAAQ,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACpB;;AJJD,AAAA,iBAAiB,CAAC;EACd,KAAK,EAAE,GACX;CAAC;;AAED,AAAA,iBAAiB,CAAC;EACd,cAAc,EAAE,IAAI;EACpB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;EACnB,aAAa,EAAE,eAAe;CACjC;;AAED,AAAA,iBAAiB,CAAC;EACd,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,kBAAkB,CAAC;EACf,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,GAAG;CACf;;AAED,AAAA,oBAAoB,CAAC;EACjB,SAAS,EAAE,IAAI;EACf,QAAQ,EAAE,QAAQ;CACrB;;AAED,AAAA,qBAAqB,CAAC;EAClB,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "InformComponent.scss",
+        "../main.scss",
+        "../_animations.scss",
+        "../_functions.scss",
+        "../_global.scss",
+        "../_mixins.scss",
+        "../_typography.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "InformComponent.css"
+}

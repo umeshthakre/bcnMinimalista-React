@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./NavBar.module.css";
+import "../../styles/ui/NavBar.css";
 
 class NavBar extends Component {
   constructor(props) {
@@ -28,47 +28,33 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <Navbar expand="sm" sticky="top">
-        <Container>
-          <NavbarToggler
-            onClick={this.toggleNav}
-            className={`${styles["me-2"]} ${styles.fa} ${styles["fa-bars"]}`}
-          />
+      <Navbar expand="sm" sticky="top" className="navbar-container">
+
+          <NavbarToggler onClick={this.toggleNav} className="navbar__toggler fa-bars" />
+
           <Collapse isOpen={this.state.isNavOpen} navbar>
-            <Nav className={styles.navbar} navbar>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/inform">
-                  inform
-                </NavLink>
+            <Nav className="navbar__nav" navbar>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/inform">inform</NavLink>
               </NavItem>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/connect">
-                  connect
-                </NavLink>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/connect">connect</NavLink>
               </NavItem>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/reduce">
-                  reduce
-                </NavLink>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/reduce">reduce</NavLink>
               </NavItem>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/tech">
-                  tech & tools
-                </NavLink>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/tech">tech & tools</NavLink>
               </NavItem>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/rescue">
-                  rescue
-                </NavLink>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/rescue">rescue</NavLink>
               </NavItem>
-              <NavItem className={styles.navitem}>
-                <NavLink to="/collab">
-                  collab
-                </NavLink>
+              <NavItem className="navbar__navitem">
+                <NavLink to="/collab">collab</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
-        </Container>
+
       </Navbar>
     );
   }

@@ -1,0 +1,37 @@
+@import "../main.scss";
+
+.home__card-row {
+    padding: 10px;
+    margin: 0;
+    border-top: 2px solid lightgreen;
+    max-height: 300px;
+}
+
+.home__card-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 120px;
+}
+
+.home__card-text-body {
+    font-family: "Montserrat", sans-serif;
+    margin-right: 15px;
+    position: absolute;
+    top: 35%;
+    right: 1%;
+    color: white;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    left: auto;
+    top: auto;
+    font-size: 20%;
+}
+
+.home__card-text {
+    color: white;
+}
+

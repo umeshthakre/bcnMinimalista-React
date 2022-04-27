@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.jumbotron-container {
+  width: 95%;
+  background-color: white;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+}
+
+.jumbotron__content {
+  text-align: right;
+}
+/*# sourceMappingURL=Jumbotron.css.map */

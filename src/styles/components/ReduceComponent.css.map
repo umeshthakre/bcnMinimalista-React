@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,QAAQ,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACpB",
+    "sources": [
+        "ReduceComponent.scss",
+        "../main.scss",
+        "../_animations.scss",
+        "../_functions.scss",
+        "../_global.scss",
+        "../_mixins.scss",
+        "../_typography.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "ReduceComponent.css"
+}

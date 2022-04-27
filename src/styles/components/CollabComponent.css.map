@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,QAAQ,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACpB;;AJJD,AAAA,iBAAiB,CAAC;EACd,KAAK,EAAE,GAAG;CACb;;AAED,AAAA,cAAc,CAAC;EACX,KAAK,EMPS,IAAI;CNQrB",
+    "sources": [
+        "CollabComponent.scss",
+        "../main.scss",
+        "../_animations.scss",
+        "../_functions.scss",
+        "../_global.scss",
+        "../_mixins.scss",
+        "../_typography.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "CollabComponent.css"
+}

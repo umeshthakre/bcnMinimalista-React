@@ -1,0 +1,13 @@
+@import "../main.scss";
+
+.jumbotron-container {
+    width: 95%;
+    background-color: white;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    padding-bottom: 0px;
+}
+
+.jumbotron__content {
+    text-align: right;
+}

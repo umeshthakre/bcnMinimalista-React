@@ -1,0 +1,23 @@
+@import "../main.scss";
+
+.navbar-container {
+  width: 95%;
+  margin-bottom: 0;
+  padding: 0px;
+  border-bottom: 2px solid black;
+  display: flex-end;
+}
+
+.navbar__nav {
+  color: black;
+  background-color: white;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar__toggler {
+  border: 1px solid black;
+  float: right;
+  margin-left: auto;
+  border: none;
+}

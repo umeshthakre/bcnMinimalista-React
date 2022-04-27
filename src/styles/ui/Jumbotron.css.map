@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AIAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,QAAQ,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,OAAO;CACpB;;AJJD,AAAA,oBAAoB,CAAC;EACjB,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,KAAK;EACvB,eAAe,EAAE,QAAQ;EACzB,aAAa,EAAE,CAAC;EAChB,cAAc,EAAE,GAAG;CACtB;;AAED,AAAA,mBAAmB,CAAC;EAChB,UAAU,EAAE,KAAK;CACpB",
+    "sources": [
+        "Jumbotron.scss",
+        "../main.scss",
+        "../_animations.scss",
+        "../_functions.scss",
+        "../_global.scss",
+        "../_mixins.scss",
+        "../_typography.scss",
+        "../_variables.scss"
+    ],
+    "names": [],
+    "file": "Jumbotron.css"
+}

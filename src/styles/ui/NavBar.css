@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.navbar-container {
+  width: 95%;
+  margin-bottom: 0;
+  padding: 0px;
+  border-bottom: 2px solid black;
+  display: flex-end;
+}
+
+.navbar__nav {
+  color: black;
+  background-color: white;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__toggler {
+  border: 1px solid black;
+  float: right;
+  margin-left: auto;
+  border: none;
+}
+/*# sourceMappingURL=NavBar.css.map */
