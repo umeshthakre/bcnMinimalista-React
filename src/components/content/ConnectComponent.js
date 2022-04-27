@@ -10,53 +10,42 @@ const Connect = (props) => {
   ];
   console.log(allForum);
 
-  const [comment, setComment] = useState(props.comments);
-  const [forum, setForum] = useState(allForum);
-  const [currentForum, setCurrentForum] = useState("all");
+  const [comment, setComment] = useState("");
+  const [commentList, setCommentList] = useState(props.comments);
+  const [forum, setForum] = useState("all");
 
   const filterItems = (forum) => {
-    if (forum === "all") {
-      setComment(props.comments);
+    setForum(formik.values.forum);
+    if (formik.values.forum === "all") {
+      setCommentList(props.comments);
       return;
+    } else {
+      props.comments.filter((comment) => comment.forum === forum);
     }
-    const filteredComments = props.comments.filter(
-      (comment) => comment.forum === forum
-    );
-    setComment(filteredComments);
-    setCurrentForum(forum);
   };
-
-  const updateCommentView = () => {
-    console.log(props.comments);
-    console.log(currentForum);
-    const filteredComments = props.comments.filter(
-      (comment) => comment.forum === currentForum
-    );
-    setComment(filteredComments);
-  };
-
-  //form formik
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      comment: "",
-      forum: "",
-    },
-    onSubmit: (values, { resetForm }) => {
-      setComment({
-        name: values.name,
-        comment: values.comment,
-      });
-      resetForm();
-    },
-  });
 
   const addCommentHandler = (values) => {
     console.log(values);
 
-    props.addComment(" ", values.name, currentForum, values.message, "date");
+    props.addComment(" ", values.name, values.forum, values.message, "date");
     props.updateCommentView();
   };
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      comment: "",
+      forum: "all",
+    },
+    onSubmit: (values, { resetForm }) => {
+      addCommentHandler({
+        name: values.name,
+        comment: values.comment,
+        forum: values.forum,
+      });
+      resetForm();
+    },
+  });
 
   return (
     <React.Fragment>
@@ -64,21 +53,23 @@ const Connect = (props) => {
         <div className="connect__title">
           <p className="connect__title-text">chat with your community</p>
         </div>
-        <div className="connect__forum-options">
-          {forum.map((forum, index) => {
-            return (
-              <button
-                type="button"
-                key={index}
-                onClick={() => filterItems(forum)}
-              >
-                {forum}
-              </button>
-            );
-          })}
-        </div>
         <div className="connect__form-container">
           <form className="connect__form" onSubmit={formik.handleSubmit}>
+            <div className="connect__forum-options">
+              {allForum.map((forum, index) => {
+                return (
+                  <button
+                    type="button"
+                    key={index}
+                    onClick={() => filterItems(forum)}
+                    value={formik.values.forum}
+                    onChange={formik.handleChange}
+                  >
+                    {forum}
+                  </button>
+                );
+              })}
+            </div>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -97,10 +88,11 @@ const Connect = (props) => {
                 className="form-control"
               />
             </div>
+            <button type="submit">submit</button>
           </form>
         </div>
         <div className="connect__comments-container">
-          {comment.map((comment) => {
+          {props.comments.map((comment) => {
             return (
               <div key={comment.id} className="connect__comment-body">
                 <div className="connect__comment-user">{comment.name}</div>
@@ -114,7 +106,6 @@ const Connect = (props) => {
             );
           })}
         </div>
-
       </div>
       <Footer />
     </React.Fragment>
