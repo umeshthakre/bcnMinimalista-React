@@ -29,32 +29,37 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar expand="sm" sticky="top" className="navbar-container">
+        <NavbarToggler
+          onClick={this.toggleNav}
+          className="navbar__toggler fa-bars"
+        />
 
-          <NavbarToggler onClick={this.toggleNav} className="navbar__toggler fa-bars" />
+        <Collapse isOpen={this.state.isNavOpen} navbar>
+          <div className="navbar__nav" navbar>
+            <NavLink className="navbar__navitem" to="/inform">
+              inform
+            </NavLink>
 
-          <Collapse isOpen={this.state.isNavOpen} navbar>
-            <Nav className="navbar__nav" navbar>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/inform">inform</NavLink>
-              </NavItem>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/connect">connect</NavLink>
-              </NavItem>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/reduce">reduce</NavLink>
-              </NavItem>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/tech">tech & tools</NavLink>
-              </NavItem>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/rescue">rescue</NavLink>
-              </NavItem>
-              <NavItem className="navbar__navitem">
-                <NavLink to="/collab">collab</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
+            <NavLink className="navbar__navitem" to="/connect">
+              connect
+            </NavLink>
 
+            <NavLink className="navbar__navitem" to="/reduce">
+              reduce
+            </NavLink>
+
+            <NavLink className="navbar__navitem" to="/tech">
+              tech and tools
+            </NavLink>
+            <NavLink className="navbar__navitem" to="/rescue">
+              rescue
+            </NavLink>
+
+            <NavLink className="navbar__navitemv" to="/collab">
+              collab
+            </NavLink>
+          </div>
+        </Collapse>
       </Navbar>
     );
   }

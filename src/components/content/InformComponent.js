@@ -41,9 +41,12 @@ const Inform = (props) => {
           {props.informList.map((inform) => {
             return (
               <div className="inform__list-row" key={inform.id}>
-                <div className="inform__list-img">
-                  <img src={inform.img} alt={inform.alt} />
-                </div>
+                <img
+                  src={inform.img}
+                  alt={inform.alt}
+                  className="inform__list-img"
+                />
+
                 <div className="inform__list-body">
                   <a href={inform.src} target="_blank" rel="noreferrer">
                     <p className="inform__list-body-header">{inform.title}</p>

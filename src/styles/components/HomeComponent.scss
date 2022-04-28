@@ -5,6 +5,7 @@
     margin: 0;
     border-top: 2px solid lightgreen;
     max-height: 300px;
+    width: 100%;
 }
 
 .home__card-img {
@@ -14,9 +15,10 @@
     height: 100%;
     object-fit: cover;
     max-height: 120px;
+    max-width: 100%;
 }
 
-.home__card-text-body {
+.home_card-text-body {
     font-family: "Montserrat", sans-serif;
     margin-right: 15px;
     position: absolute;

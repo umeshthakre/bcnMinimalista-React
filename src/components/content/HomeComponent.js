@@ -22,10 +22,10 @@ const Home = (props) => {
           return (
             <Fade in key={card.id}>
               <NavLink to={card.link}>
-                <div className="home_card-row">
-                  <img src={card.src} alt="" className="home_card-img" />
-                  <div className="home_card-text-body">
-                    <p className="home_card-text">{card.name}</p>
+                <div className="home__card-row">
+                  <img src={card.src} alt="" className="home__card-img" />
+                  <div className="home__card-text-body">
+                  <p className="home__card-text">{card.name}</p>
                   </div>
                 </div>
               </NavLink>
