@@ -1,34 +1,39 @@
 import React, { useState } from "react";
+import { COMMENTS } from "../../shared/comments";
 import Footer from "../ui/Footer";
 import { useFormik } from "formik";
 import "../../styles/components/ConnectComponent.css";
 
 const Connect = (props) => {
-  const allForum = [
-    "all",
-    ...new Set(props.comments.map((comment) => comment.forum)),
-  ];
-  console.log(allForum);
 
+  //imoprt comments data from shared folder
+    const commentsArray = COMMENTS;
+
+  //state management
   const [comment, setComment] = useState("");
-  const [commentList, setCommentList] = useState(props.comments);
+  const [commentList, setCommentList] = useState(commentsArray);
   const [forum, setForum] = useState("all");
 
+  //create an array of all available forums within commentsArray
+  const allForum = [
+    "all",
+    ...new Set(commentsArray.map((comment) => comment.forum)),
+  ];
+
+  //set forum value in form / filter comments in comments list 
   const filterItems = (forum) => {
-    setForum(formik.values.forum);
-    if (formik.values.forum === "all") {
-      setCommentList(props.comments);
+    setForum(formik.values.forum)
+    console.log(forum)
+    if (forum === "all") {
+      setCommentList(commentsArray);
       return;
     } else {
-      props.comments.filter((comment) => comment.forum === forum);
+      commentsArray.filter((comment) => comment.forum === forum);
     }
   };
 
   const addCommentHandler = (values) => {
     console.log(values);
-
-    props.addComment(" ", values.name, values.forum, values.message, "date");
-    props.updateCommentView();
   };
 
   const formik = useFormik({
@@ -88,11 +93,13 @@ const Connect = (props) => {
                 className="form-control"
               />
             </div>
-            <button type="submit">submit</button>
+            <button onClick={addCommentHandler} type="submit">
+              submit
+            </button>
           </form>
         </div>
         <div className="connect__comments-container">
-          {props.comments.map((comment) => {
+          {commentsArray.map((comment) => {
             return (
               <div key={comment.id} className="connect__comment-body">
                 <div className="connect__comment-user">{comment.name}</div>

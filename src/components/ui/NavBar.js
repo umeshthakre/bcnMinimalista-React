@@ -35,7 +35,7 @@ class NavBar extends Component {
         />
 
         <Collapse isOpen={this.state.isNavOpen} navbar>
-          <div className="navbar__nav" navbar>
+          <div className="navbar__nav">
             <NavLink className="navbar__navitem" to="/inform">
               inform
             </NavLink>

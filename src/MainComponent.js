@@ -11,7 +11,7 @@ import NavBar from "./components/ui/NavBar";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { actions } from "react-redux-form";
-import { addComment, fetchInform, fetchHome } from "./redux/ActionCreators";
+import { fetchInform, fetchHome } from "./redux/ActionCreators";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const mapStateToProps = (state) => {
@@ -23,13 +23,13 @@ const mapStateToProps = (state) => {
     tips: state.tips,
     tools: state.tools,
     collab: state.collab,
-    comments: state.comments,
+    // comments: state.comments,
   };
 };
 
 const mapDispatchToProps = {
-  addComment: (id, name, forum, message, date) =>
-    addComment(id, name, forum, message, date),
+  // addComment: (id, name, forum, message, date) =>
+  //   addComment(id, name, forum, message, date),
   fetchInform: () => fetchInform(),
   fetchHome: () => fetchHome(),
   resetCollabForm: () => actions.reset("collabForm"),
@@ -94,8 +94,8 @@ class Main extends Component {
                   path="/connect"
                   render={() => (
                     <Connect
-                      comments={this.props.comments}
-                      addComment={this.props.addComment}
+                      // comments={this.props.comments}
+                      // addComment={this.props.addComment}
                     />
                   )}
                 />
