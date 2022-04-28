@@ -1,1 +1,81 @@
 @import "../main.scss";
+
+.container-tech {
+  width: 95%;
+}
+
+.tech__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.tech__title-text {
+  font-size: 150%;
+  margin-top: auto;
+  margin-bottom: 0;
+  border-bottom: 1px solid green;
+}
+
+.tech__caption-body {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech__form-container {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech__form {
+  .form-group {
+    margin: 0px;
+    text-align: center;
+    button {
+      margin-top: 0.7rem;
+    }
+  }
+  .form-control {
+    text-align: center;
+  }
+}
+.tech__form-buttons {
+    width: 100%;
+display: flex;
+justify-content: flex-end;
+    button {
+        margin: 1rem;
+        margin-right: 0;
+        color: white;
+        background-color: rgb(39, 167, 39);
+        padding: 0.6rem;
+        border-radius: 0.7rem;
+        border: none;
+    }
+
+}
+
+.tech__tools-container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .tech__tools-card{
+        width: 40%;
+        margin: 1rem;
+        text-align: center;
+        border: 1px solid black;
+        padding: .4rem;
+        background: #556B2F;
+    }
+    .tech__tools-text {
+        color: white;
+    }
+}

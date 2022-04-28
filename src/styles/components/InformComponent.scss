@@ -1,30 +1,48 @@
 @import "../main.scss";
 
 .container-inform {
-    width: 95%
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .inform__title-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.inform__title {
-    display: flex;
-margin-left: 30%;
-}
-
-.inform__title-text {
-
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .inform__modal-btn {
+    color: white;
+    background-color: rgb(39, 167, 39);
+    padding: .6rem;
+    border-radius: 10rem;
+    border: none;
+}
+
+.inform__title {
+display: flex;
+margin-left: 30%;
 
 }
 
+.inform__title-text {
+font-size: 150%;
+margin-top: auto;
+margin-bottom: auto;
+border-bottom: 1px solid green;
+}
+
+.inform__modal-btn {
+margin-top: auto;
+margin-bottom: auto;
+}
+
 .inform__list-row {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: space-between;
@@ -43,7 +61,7 @@ margin-left: 30%;
 
 .inform__list-body {
     font-size: 110%;
-    padding: 0px;
+    padding: 1rem;
     flex: 70%;
 }
 
@@ -52,6 +70,18 @@ margin-left: 30%;
     position: relative;
 }
 
-.inform__list-caption {
-    font-size: 110%;
+.inform__list-body-caption {
+    font-size: 80%;
 }
+
+//modal
+
+// .inform__modal-suggest {
+//     background-color: green;
+//     min-height: 300px;
+//     z-index: 0;
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     justify-content: center;
+//     align-items: center;
+// }

@@ -1,8 +1,25 @@
 import React, { useState } from "react";
 import Footer from "../ui/Footer";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import Modal from "react-modal/lib/components/Modal";
 import "../../styles/components/CollabComponent.css";
+
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .min(3, "Your name should have more than 3 characters")
+    .required("Required"),
+  phoneNum: Yup.string()
+    .min(
+      9,
+      "Phone number should have more than 3 characters, please include country code"
+    )
+    .required("Required"),
+  email: Yup.string().min(3, "Too short").required("Required"),
+  message: Yup.string()
+    .min(2, "You can do better than that")
+    .required("Required"),
+});
 
 const Collab = (props) => {
   Modal.setAppElement(document.getElementById("root"));
@@ -15,6 +32,7 @@ const Collab = (props) => {
       email: "",
       message: "",
     },
+    validationSchema,
     onSubmit: (values, { resetForm }) => {
       setContact({
         name: values.name,
@@ -49,9 +67,12 @@ const Collab = (props) => {
                 onChange={formik.handleChange}
                 className="form-control"
               />
+              {formik.errors.name && formik.touched.name ? (
+                <div className="infom__errors">{formik.errors.name}</div>
+              ) : null}
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">Phone (optional)</label>
               <input
                 type="number"
                 name="phoneNum"
@@ -59,6 +80,9 @@ const Collab = (props) => {
                 onChange={formik.handleChange}
                 className="form-control"
               />
+              {formik.errors.phoneNum && formik.touched.phoneNum ? (
+                <div className="infom__errors">{formik.errors.phoneNum}</div>
+              ) : null}
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -69,19 +93,27 @@ const Collab = (props) => {
                 onChange={formik.handleChange}
                 className="form-control"
               />
+              {formik.errors.email && formik.touched.email ? (
+                <div className="infom__errors">{formik.errors.email}</div>
+              ) : null}
             </div>
             <div className="form-group">
               <label htmlFor="message">Enter your message here</label>
-              <input
-                type="textarea"
+              <textarea
+                type="text"
                 name="message"
-                rows="6"
+                rows="4"
                 value={formik.values.message}
                 onChange={formik.handleChange}
                 className="form-control"
               />
+              {formik.errors.message && formik.touched.message ? (
+                <div className="infom__errors">{formik.errors.message}</div>
+              ) : null}
             </div>
-            <button type="submit">Send FeedBack</button>
+            <div className="collab__form-button">
+              <button type="submit">Send Feedback</button>
+            </div>
           </form>
         </div>
         <div className="collab__modal">
@@ -99,16 +131,21 @@ const Collab = (props) => {
             </button>
           </Modal>
         </div>
-        <div className="collab__list">
-          {props.collab.map((collab) => {
-            return (
-              <div key={collab.id} className="collab__list-card">
-                <a href={collab.src} target="_blank" rel="noreferrer">
-                  <p className="collab__list-card-text">{collab.name}</p>
-                </a>
-              </div>
-            );
-          })}
+        <div className="collab__list-container">
+          <div className="collab__list-header">
+            <p>a big shout out to all our collaborators!</p>
+          </div>
+          <div className="collab__list">
+            {props.collab.map((collab) => {
+              return (
+                <div key={collab.id} className="collab__list-card">
+                  <a href={collab.src} target="_blank" rel="noreferrer">
+                    <p className="collab__list-card-text">{collab.name}</p>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       <Footer />

@@ -1,9 +1,92 @@
 @import "../main.scss";
 
 .collab-container {
-    width: 50%;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .collab__title {
-    color: $font-color-test;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid green;
+  text-align: center;
+  font-size: 120%;
+}
+.collab__title-text {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 150%;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.collab__title-caption {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collab__form-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collab__list-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.collab__list-header {
+  text-align: center;
+  font-size: 150%;
+  margin-top: auto;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid green;
+}
+
+.collab__form-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+        button {
+            margin: 1rem;
+            margin-right: 0;
+            color: white;
+            background-color: rgb(39, 167, 39);
+            padding: 0.6rem;
+            border-radius: 0.7rem;
+            border: none;
+        }
+  }
+
+.collab__list {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .collab__list-card {
+    text-align: center;
+    .collab__list-card-text {
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 1.6rem;
+background: #8FBC8F;
+
+    }
+  }
+}
+
+.infom__errors {
+  color: rgb(181, 18, 18);
+  font-size: 85%;
 }

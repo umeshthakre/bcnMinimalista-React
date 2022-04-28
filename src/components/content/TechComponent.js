@@ -3,6 +3,7 @@ import Footer from "../ui/Footer";
 import Modal from "react-modal/lib/components/Modal";
 import { useFormik } from "formik";
 import "../../styles/components/TechComponent.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Tech = (props) => {
   Modal.setAppElement(document.getElementById("root"));
@@ -46,7 +47,7 @@ const Tech = (props) => {
         <div className="tech__form-container">
           <form className="tech__form" onSubmit={formik.handleSubmit}>
             <div className="form-group">
-              <label htmlFor="firstName" md={2}></label>
+              <label htmlFor="kilometers" md={2}></label>
               <div md={10}>
                 <input
                   type="number"
@@ -60,7 +61,7 @@ const Tech = (props) => {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="fastFashion" md={2}></label>
+              <label htmlFor="fastFashion" md={2} />
               <div>
                 <input
                   type="number"
@@ -101,11 +102,23 @@ const Tech = (props) => {
                 />
               </div>
             </div>
-            <div className="form-group">
-              <button type="submit">Check Footprint</button>
+            <div className="tech__form-buttons">
               <button>Clear</button>
+              <button type="submit">Check Footprint</button>
             </div>
           </form>
+        </div>
+        <div className="tech__modal">
+          <Modal isOpen={modalIsOpen}>
+            {answer}
+            <button
+              onClick={() => {
+                setModalIsOpen(false);
+              }}
+            >
+              close
+            </button>
+          </Modal>
         </div>
         <div className="tech__tools-container">
           {props.tools.map((tools) => {

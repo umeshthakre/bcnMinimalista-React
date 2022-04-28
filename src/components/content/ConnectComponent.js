@@ -60,31 +60,36 @@ const Connect = (props) => {
         <div className="connect__form-container">
           <form className="connect__form" onSubmit={formik.handleSubmit}>
             <div className="connect__forum-options">
-              <button className="connect__forum-option"
+              <button
+                className="connect__forum-option"
                 value="all"
                 onChange={(e) => setForum({ forum: formik.values.forum })}
               >
                 All
               </button>
-              <button className="connect__forum-option"
+              <button
+                className="connect__forum-option"
                 value="chat"
                 onChange={(e) => setForum({ forum: formik.values.forum })}
               >
                 Chat
               </button>
-              <button className="connect__forum-option"
+              <button
+                className="connect__forum-option"
                 value="events"
                 onChange={(e) => setForum({ forum: formik.values.forum })}
               >
                 Events
               </button>
-              <button className="connect__forum-option"
+              <button
+                className="connect__forum-option"
                 value="trade"
                 onChange={(e) => setForum({ forum: formik.values.forum })}
               >
                 Trade
               </button>
-              <button className="connect__forum-option"
+              <button
+                className="connect__forum-option"
                 value="other"
                 onChange={(e) => setForum({ forum: formik.values.forum })}
               >
@@ -105,25 +110,27 @@ const Connect = (props) => {
                 );
               })} */}
             </div>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formik.values.name}
-                onChange={formik.handleChange}
-                className="form-control"
-              />
-              <label htmlFor="name">Comment</label>
-              <input
-                type="text"
-                name="comment"
-                value={formik.values.comment}
-                onChange={formik.handleChange}
-                className="form-control"
-              />
+            <div className="connect__form-input">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  className="form-control"
+                />
+                <label htmlFor="name">Comment</label>
+                <input
+                  type="text"
+                  name="comment"
+                  value={formik.values.comment}
+                  onChange={formik.handleChange}
+                  className="form-control"
+                />
+              </div>
             </div>
-            <button onClick={addCommentHandler} type="submit">
+            <button onClick={addCommentHandler} type="submit" className="connect__form-submit">
               submit
             </button>
           </form>

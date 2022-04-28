@@ -8,10 +8,111 @@
 }
 
 .collab-container {
-  width: 50%;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .collab__title {
-  color: blue;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid green;
+  text-align: center;
+  font-size: 120%;
+}
+
+.collab__title-text {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 150%;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.collab__title-caption {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collab__form-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collab__list-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.collab__list-header {
+  text-align: center;
+  font-size: 150%;
+  margin-top: auto;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid green;
+}
+
+.collab__form-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.collab__form-button button {
+  margin: 1rem;
+  margin-right: 0;
+  color: white;
+  background-color: #27a727;
+  padding: 0.6rem;
+  border-radius: 0.7rem;
+  border: none;
+}
+
+.collab__list {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.collab__list .collab__list-card {
+  text-align: center;
+}
+
+.collab__list .collab__list-card .collab__list-card-text {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  padding: 1.6rem;
+  background: #8FBC8F;
+}
+
+.infom__errors {
+  color: #b51212;
+  font-size: 85%;
 }
 /*# sourceMappingURL=CollabComponent.css.map */

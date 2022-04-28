@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../ui/Footer";
-import Modal from "react-modal/lib/components/Modal";
+// import Modal from "react-modal/lib/components/Modal";
+import Modal from 'react-modal';
 import { useFormik } from "formik";
 import "../../styles/components/InformComponent.css";
 
@@ -59,8 +60,35 @@ const Inform = (props) => {
             );
           })}
         </div>
-        <div className="inform__modal-suggest">
-          <Modal isOpen={modalOneIsOpen}>
+        <div>
+          <Modal
+            isOpen={modalOneIsOpen}
+
+            style={{
+              overlay: {
+                position: "fixed",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundColor: "white",
+              },
+              content: {
+                position: "absolute",
+                top: "40px",
+                left: "40px",
+                right: "40px",
+                bottom: "40px",
+                border: "1px solid #ccc",
+                background: "#fff",
+                overflow: "auto",
+                WebkitOverflowScrolling: "touch",
+                borderRadius: "4px",
+                outline: "none",
+                padding: "20px",
+              },
+            }}
+          >
             <form onSubmit={formik.handleSubmit}>
               <label htmlFor="article">Article</label>
               <input
@@ -98,8 +126,8 @@ const Inform = (props) => {
           <Modal isOpen={modalTwoIsOpen}>
             <div> Modal Two </div>
             <div>
-              Thank you for submitting {formik.values.article} and{" "}
-              {formik.values.link}{" "}
+              Thank you for submitting {formik.values.article} and the <a href={formik.values.link} target="_blank" style={{color:"blue"}}> link!</a>}
+
             </div>
             <button
               onClick={() => {

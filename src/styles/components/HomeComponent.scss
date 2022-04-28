@@ -1,39 +1,64 @@
 @import "../main.scss";
 
 .home__card-row {
-    padding: 10px;
-    margin: 0;
-    border-top: 2px solid lightgreen;
-    max-height: 300px;
-    width: 100%;
+  //   position: relative;
+  //   z-index: 100;
+  padding: 10px;
+  margin: 0.1rem;
+  // border-top: 2px solid lightgreen;
+  //   max-height: 300px;
+  width: 100%;
+height: 100px;
+// min-height: 300px;
+}
+
+.home_card-body {
+  position: relative;
+  display: inline-block;
+
+//   height: auto;
+  //   z-index: 1;
+  //   font-family: "Montserrat", sans-serif;
+  //   margin-right: 15px;
+  //   margin-top: auto;
+  //   margin-bottom: auto;
+    // max-height: 300px;
+  //   color: white;
+  //   align-items: center;
+  //   text-align: center;
+  //   vertical-align: middle;
+  //   font-size: 40%;
 }
 
 .home__card-img {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    max-height: 120px;
-    max-width: 100%;
-}
+  // justify-content: center;
+//   position: absolute;
+display: block;
+//   z-index: 1000;
+width: 100%;
+height: auto;
 
-.home_card-text-body {
-    font-family: "Montserrat", sans-serif;
-    margin-right: 15px;
-    position: absolute;
-    top: 35%;
-    right: 1%;
-    color: white;
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-    left: auto;
-    top: auto;
-    font-size: 20%;
+
+  object-fit: cover;
 }
 
 .home__card-text {
-    color: white;
+  position: absolute;
+  height: 40%;
+  text-align: center;    
+  vertical-align: middle;
+// margin-top: 25%;
+// margin-top: auto;
+  width: 30%;
+//   margin-top: auto;
+//   margin-bottom: auto;
+//   margin-right: 5%;
+  color: blue;
+  //   z-index: 1;
 }
 
+// .home__card-text:before {
+//     display: inline-block;
+//     height: 100%;
+//     vertical-align: middle;
+//  }

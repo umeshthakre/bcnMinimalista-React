@@ -2,13 +2,16 @@
 
 .footer-container {
     width: 95%;
+    margin-bottom: 1rem;
 }
 
 .footer__content {
     padding-top: 10px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    display: flex;
     flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .footer__icon {

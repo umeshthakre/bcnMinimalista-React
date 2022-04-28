@@ -9,16 +9,23 @@
 
 .footer-container {
   width: 95%;
+  margin-bottom: 1rem;
 }
 
 .footer__content {
   padding-top: 10px;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .footer__icon {
