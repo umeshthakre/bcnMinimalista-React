@@ -5,9 +5,8 @@ import { useFormik } from "formik";
 import "../../styles/components/ConnectComponent.css";
 
 const Connect = (props) => {
-
   //imoprt comments data from shared folder
-    const commentsArray = COMMENTS;
+  const commentsArray = COMMENTS;
 
   //state management
   const [comment, setComment] = useState("");
@@ -20,10 +19,10 @@ const Connect = (props) => {
     ...new Set(commentsArray.map((comment) => comment.forum)),
   ];
 
-  //set forum value in form / filter comments in comments list 
+  //set forum value in form / filter comments in comments list
   const filterItems = (forum) => {
-    setForum(formik.values.forum)
-    console.log(forum)
+    setForum(formik.values.forum);
+    console.log(forum);
     if (forum === "all") {
       setCommentList(commentsArray);
       return;
@@ -61,7 +60,38 @@ const Connect = (props) => {
         <div className="connect__form-container">
           <form className="connect__form" onSubmit={formik.handleSubmit}>
             <div className="connect__forum-options">
-              {allForum.map((forum, index) => {
+              <button className="connect__forum-option"
+                value="all"
+                onChange={(e) => setForum({ forum: formik.values.forum })}
+              >
+                All
+              </button>
+              <button className="connect__forum-option"
+                value="chat"
+                onChange={(e) => setForum({ forum: formik.values.forum })}
+              >
+                Chat
+              </button>
+              <button className="connect__forum-option"
+                value="events"
+                onChange={(e) => setForum({ forum: formik.values.forum })}
+              >
+                Events
+              </button>
+              <button className="connect__forum-option"
+                value="trade"
+                onChange={(e) => setForum({ forum: formik.values.forum })}
+              >
+                Trade
+              </button>
+              <button className="connect__forum-option"
+                value="other"
+                onChange={(e) => setForum({ forum: formik.values.forum })}
+              >
+                Other
+              </button>
+
+              {/* {allForum.map((forum, index) => {
                 return (
                   <button
                     type="button"
@@ -73,7 +103,7 @@ const Connect = (props) => {
                     {forum}
                   </button>
                 );
-              })}
+              })} */}
             </div>
             <div className="form-group">
               <label htmlFor="name">Name</label>
