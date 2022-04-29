@@ -9,26 +9,37 @@ const Connect = (props) => {
   const commentsArray = COMMENTS;
 
   //state management
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState({
+    name: "",
+    comment: "",
+    forum: "all",
+  });
   const [commentList, setCommentList] = useState(commentsArray);
   const [forum, setForum] = useState("all");
 
-  //create an array of all available forums within commentsArray
-  const allForum = [
-    "all",
-    ...new Set(commentsArray.map((comment) => comment.forum)),
-  ];
-
   //set forum value in form / filter comments in comments list
-  const filterItems = (forum) => {
-    setForum(formik.values.forum);
-    console.log(forum);
-    if (forum === "all") {
-      setCommentList(commentsArray);
-      return;
-    } else {
-      commentsArray.filter((comment) => comment.forum === forum);
-    }
+  const filterItems = () => {
+    // if (formik.values.forum === "all") {
+    //   return commentsArray.map((comment, id) => {
+    //     <div key={id}>
+    //       <div>{comment.name}</div>
+    //       <div>{comment.message}</div>
+    //     </div>;
+    //   });
+    // }
+    return commentsArray.map((comment, id) => {
+      if (comment.forum === forum) {
+        return (
+          <div key={id} className="connect__comment-body">
+            <div className="connect__comment-user">{comment.name}</div>
+            <div className="connect__comment-message">{comment.message}</div>
+            <div className="connect__comment-date">
+              Posted on {comment.date} to {comment.forum}
+            </div>
+          </div>
+        );
+      }
+    });
   };
 
   const addCommentHandler = (values) => {
@@ -63,52 +74,38 @@ const Connect = (props) => {
               <button
                 className="connect__forum-option"
                 value="all"
-                onChange={(e) => setForum({ forum: formik.values.forum })}
+                onClick={(e) => setForum(e.target.value)}
               >
                 All
               </button>
               <button
                 className="connect__forum-option"
                 value="chat"
-                onChange={(e) => setForum({ forum: formik.values.forum })}
+                onClick={(e) => setForum(e.target.value)}
               >
                 Chat
               </button>
               <button
                 className="connect__forum-option"
                 value="events"
-                onChange={(e) => setForum({ forum: formik.values.forum })}
+                onClick={(e) => setForum(e.target.value)}
               >
                 Events
               </button>
               <button
                 className="connect__forum-option"
                 value="trade"
-                onChange={(e) => setForum({ forum: formik.values.forum })}
+                onClick={(e) => setForum(e.target.value)}
               >
                 Trade
               </button>
               <button
                 className="connect__forum-option"
                 value="other"
-                onChange={(e) => setForum({ forum: formik.values.forum })}
+                onClick={(e) => setForum(e.target.value)}
               >
                 Other
               </button>
-
-              {/* {allForum.map((forum, index) => {
-                return (
-                  <button
-                    type="button"
-                    key={index}
-                    onClick={() => filterItems(forum)}
-                    value={formik.values.forum}
-                    onChange={formik.handleChange}
-                  >
-                    {forum}
-                  </button>
-                );
-              })} */}
             </div>
             <div className="connect__form-input">
               <div className="form-group">
@@ -130,26 +127,16 @@ const Connect = (props) => {
                 />
               </div>
             </div>
-            <button onClick={addCommentHandler} type="submit" className="connect__form-submit">
+            <button
+              onClick={addCommentHandler}
+              type="submit"
+              className="connect__form-submit"
+            >
               submit
             </button>
           </form>
         </div>
-        <div className="connect__comments-container">
-          {commentsArray.map((comment) => {
-            return (
-              <div key={comment.id} className="connect__comment-body">
-                <div className="connect__comment-user">{comment.name}</div>
-                <div className="connect__comment-message">
-                  {comment.message}
-                </div>
-                <div className="connect__comment-date">
-                  Posted on {comment.date} to {comment.forum}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <div className="connect__comments-container">{filterItems()}</div>
       </div>
       <Footer />
     </React.Fragment>

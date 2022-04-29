@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../ui/Footer";
-// import Modal from "react-modal/lib/components/Modal";
-import Modal from 'react-modal';
+import Modal from "react-modal/lib/components/Modal";
+// import Modal from "react-modal";
 import { useFormik } from "formik";
 import "../../styles/components/InformComponent.css";
 
@@ -60,50 +60,60 @@ const Inform = (props) => {
             );
           })}
         </div>
-        <div>
-          <Modal
-            isOpen={modalOneIsOpen}
-
-            style={{
-              overlay: {
-                position: "fixed",
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: "white",
-              },
-              content: {
-                position: "absolute",
-                top: "40px",
-                left: "40px",
-                right: "40px",
-                bottom: "40px",
-                border: "1px solid #ccc",
-                background: "#fff",
-                overflow: "auto",
-                WebkitOverflowScrolling: "touch",
-                borderRadius: "4px",
-                outline: "none",
-                padding: "20px",
-              },
-            }}
+        <Modal
+          isOpen={modalOneIsOpen}
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "white",
+              overlayClassName: "inform__modal-suggest",
+            },
+            content: {
+              position: "absolute",
+              top: "28%",
+              left: "10%",
+              right: "10%",
+              bottom: "10%",
+              border: "1px solid #ccc",
+              background: "lightgray",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "10px",
+              outline: "none",
+              padding: "20px",
+            },
+          }}
+        >
+          <form
+            onSubmit={formik.handleSubmit}
+            className="inform__modal-suggest"
           >
-            <form onSubmit={formik.handleSubmit}>
-              <label htmlFor="article">Article</label>
-              <input
-                type="text"
-                name="article"
-                value={formik.values.article}
-                onChange={formik.handleChange}
-              />
-              <label htmlFor="article">Link</label>
-              <input
-                type="text"
-                name="link"
-                value={formik.values.link}
-                onChange={formik.handleChange}
-              />
+            <label htmlFor="article" className="form-group">
+              Article Description
+            </label>
+            <textarea
+              type="text"
+              name="article"
+              rows="5"
+              value={formik.values.article}
+              onChange={formik.handleChange}
+              className="form-control"
+            />
+            <label htmlFor="article" className="form-group">
+              Link
+            </label>
+            <input
+              type="text"
+              name="link"
+              value={formik.values.link}
+              onChange={formik.handleChange}
+              className="form-control"
+            />
+            <div className="inform__modal-btn-group">
               <button
                 onClick={() => {
                   setModalOneIsOpen(false);
@@ -119,15 +129,48 @@ const Inform = (props) => {
               >
                 submit
               </button>
-            </form>
-          </Modal>
-        </div>
-        <div className="inform__modal-suggest-response">
-          <Modal isOpen={modalTwoIsOpen}>
-            <div> Modal Two </div>
+            </div>
+          </form>
+        </Modal>
+        <Modal
+          isOpen={modalTwoIsOpen}
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "white",
+              overlayClassName: "inform__modal-suggest",
+            },
+            content: {
+              position: "absolute",
+              top: "28%",
+              left: "20%",
+              right: "20%",
+              bottom: "45%",
+              border: "1px solid #ccc",
+              background: "lightgray",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+              borderRadius: "10px",
+              outline: "none",
+              padding: "20px",
+            },
+          }}
+        >
+          <div className="inform__modal-suggest-response">
             <div>
-              Thank you for submitting {formik.values.article} and the <a href={formik.values.link} target="_blank" style={{color:"blue"}}> link!</a>}
-
+              Thank you for submitting {formik.values.article} and this 
+              <a
+                href={formik.values.link}
+                target="_blank"
+                style={{ color: "green" }}
+              >
+                {" "}
+                INFO!
+              </a>, we will look into featuring it on the site
             </div>
             <button
               onClick={() => {
@@ -136,8 +179,9 @@ const Inform = (props) => {
             >
               close
             </button>
-          </Modal>
-        </div>
+          </div>
+        </Modal>
+
         <Footer />
       </div>
     </React.Fragment>

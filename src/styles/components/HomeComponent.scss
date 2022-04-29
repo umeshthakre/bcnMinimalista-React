@@ -1,64 +1,23 @@
 @import "../main.scss";
 
 .home__card-row {
-  //   position: relative;
-  //   z-index: 100;
-  padding: 10px;
-  margin: 0.1rem;
-  // border-top: 2px solid lightgreen;
-  //   max-height: 300px;
-  width: 100%;
-height: 100px;
-// min-height: 300px;
-}
-
-.home_card-body {
+  height: 200px;
   position: relative;
-  display: inline-block;
-
-//   height: auto;
-  //   z-index: 1;
-  //   font-family: "Montserrat", sans-serif;
-  //   margin-right: 15px;
-  //   margin-top: auto;
-  //   margin-bottom: auto;
-    // max-height: 300px;
-  //   color: white;
-  //   align-items: center;
-  //   text-align: center;
-  //   vertical-align: middle;
-  //   font-size: 40%;
 }
 
-.home__card-img {
-  // justify-content: center;
-//   position: absolute;
-display: block;
-//   z-index: 1000;
-width: 100%;
-height: auto;
-
-
-  object-fit: cover;
+.home__card-body {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .home__card-text {
-  position: absolute;
-  height: 40%;
-  text-align: center;    
-  vertical-align: middle;
-// margin-top: 25%;
-// margin-top: auto;
-  width: 30%;
-//   margin-top: auto;
-//   margin-bottom: auto;
-//   margin-right: 5%;
-  color: blue;
-  //   z-index: 1;
+  width: 90%;
+  height: 25%;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: white;
+  text-align: right;
+  font-size: 170%;
 }
 
-// .home__card-text:before {
-//     display: inline-block;
-//     height: 100%;
-//     vertical-align: middle;
-//  }
