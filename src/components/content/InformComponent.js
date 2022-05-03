@@ -5,6 +5,13 @@ import Modal from "react-modal/lib/components/Modal";
 import { useFormik } from "formik";
 import "../../styles/components/InformComponent.css";
 
+// image text and bg-image ; z index tells priority of things
+
+//styling is playing around and see what works
+//backend is logic.
+// how http works. what is request, response and status codes.
+//http protocol works.  
+
 const Inform = (props) => {
   Modal.setAppElement(document.getElementById("root"));
   const [modalOneIsOpen, setModalOneIsOpen] = useState(false);
@@ -73,8 +80,8 @@ const Inform = (props) => {
               overlayClassName: "inform__modal-suggest",
             },
             content: {
-              position: "absolute",
-              top: "28%",
+              position: "relative",
+              top: "10%",
               left: "10%",
               right: "10%",
               bottom: "10%",
@@ -162,7 +169,7 @@ const Inform = (props) => {
         >
           <div className="inform__modal-suggest-response">
             <div>
-              Thank you for submitting {formik.values.article} and this 
+              Thank you for submitting {formik.values.article} and this
               <a
                 href={formik.values.link}
                 target="_blank"
@@ -170,7 +177,8 @@ const Inform = (props) => {
               >
                 {" "}
                 INFO!
-              </a>, we will look into featuring it on the site
+              </a>
+              , we will look into featuring it on the site
             </div>
             <button
               onClick={() => {
